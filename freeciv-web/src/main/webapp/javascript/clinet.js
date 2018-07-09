@@ -105,7 +105,7 @@ function websocket_init()
      if (typeof client_handle_packet !== 'undefined') {
        client_handle_packet(jQuery.parseJSON(event.data));
      } else {
-       console.error("Error, freeciv-web not compiled correctly. Please "
+       console.error("Error, Battle for Planet Isotrident not compiled correctly. Please "
              + "run sync.sh in freeciv-proxy correctly.");
      }
   };

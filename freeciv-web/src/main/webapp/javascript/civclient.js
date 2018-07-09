@@ -186,7 +186,7 @@ function civclient_init()
 **************************************************************************/
 function init_common_intro_dialog() {
   if (observing) {
-    show_intro_dialog("Welcome to Freeciv-web",
+    show_intro_dialog("Welcome to Battle for Planet Isotrident",
       "You have joined the game as an observer. Please enter your name:");
     $("#turn_done_button").button( "option", "disabled", true);
 
@@ -200,16 +200,16 @@ function init_common_intro_dialog() {
     if (is_longturn()) {
         setTimeout(show_longturn_intro_dialog, 300);
     } else {
-      show_intro_dialog("Welcome to Freeciv-web",
+      show_intro_dialog("Welcome to Battle for Planet Isotrident",
         "You are about to join the game. Please enter your name:");
     }
   } else if ($.getUrlVar('action') == "earthload") {
-    show_intro_dialog("Welcome to Freeciv-web",
-      "You can now play Freeciv-web on the earth map you have chosen. " +
+    show_intro_dialog("Welcome to Battle for Planet Isotrident",
+      "You can now play Battle for Planet Isotrident on the earth map you have chosen. " +
       "Please enter your name: ");
 
   } else if ($.getUrlVar('action') == "load") {
-    show_intro_dialog("Welcome to Freeciv-web",
+    show_intro_dialog("Welcome to Battle for Planet Isotrident",
       "You are about to join this game server, where you can " +
       "load a savegame, tutorial, custom map generated from an image or a historical scenario map. " +
       "Please enter your name: ");
@@ -223,7 +223,7 @@ function init_common_intro_dialog() {
                   "participate in a multiplayer game. You can customize the game " +
                   "settings, and wait for the minimum number of players before " +
                   "the game can start. ";
-      show_intro_dialog("Welcome to Freeciv-web", msg);
+      show_intro_dialog("Welcome to Battle for Planet Isotrident", msg);
     }
 
   } else if ($.getUrlVar('action') == "hack") {
@@ -233,7 +233,7 @@ function init_common_intro_dialog() {
     if ($.getUrlVar('civserverport') != null) {
       hack_port = $.getUrlVar('civserverport');
     } else {
-      show_intro_dialog("Welcome to Freeciv-web",
+      show_intro_dialog("Welcome to Battle for Planet Isotrident",
         "Hack mode disabled because civserverport wasn't specified. "
         + "Falling back to regular mode.");
       return;
@@ -244,7 +244,7 @@ function init_common_intro_dialog() {
     } else if (simpleStorage.hasKey("username")) {
       hack_username = simpleStorage.get("username");
     } else {
-      show_intro_dialog("Welcome to Freeciv-web",
+      show_intro_dialog("Welcome to Battle for Planet Isotrident",
         "Hack mode disabled because \"username\" wasn't specified and no "
         + "stored user name was found. " +
         "Falling back to regular mode.");
@@ -258,7 +258,7 @@ function init_common_intro_dialog() {
     network_init_manual_hack(hack_port, hack_username,
                              $.getUrlVar("savegame"));
   } else {
-    show_intro_dialog("Welcome to Freeciv-web",
+    show_intro_dialog("Welcome to Battle for Planet Isotrident",
       "You are about to join this game server, where you can " +
       "play a singleplayer game against the Freeciv AI. You can " +
       "start the game directly by entering any name, or customize the game settings. " +

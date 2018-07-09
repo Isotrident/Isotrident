@@ -124,7 +124,7 @@ function update_game_status_panel() {
   }
 
 
-  var page_title = "Freeciv-web - " + username
+  var page_title = "Battle for Planet Isotrident - " + username
                                     + "  (turn:" + game_info['turn'] + ", port:"
                                     + civserverport + ") ";
   if (server_settings['metamessage'] != null) {

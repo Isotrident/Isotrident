@@ -126,20 +126,6 @@
 	<div class="container">
 		<%@include file="/WEB-INF/jsp/fragments/header.jsp"%>
 
-		<div class="row">
-			<div class="col-md-12">
-				<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-				<ins class="adsbygoogle"
-					style="display:block"
-					data-ad-client="ca-pub-5520523052926214"
-					data-ad-slot="7043279885"
-					data-ad-format="auto"></ins>
-				<script>
-				(adsbygoogle = window.adsbygoogle || []).push({});
-				</script>
-			</div>
-		</div>
-
 		<div class="jumbotron">
 			<div class="row">
 
@@ -165,20 +151,6 @@
 			</div>
 		</div> <!-- end jumbotron -->
 
-		<div class="row">
-			<div class="col-md-12">
-				<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-				<ins class="adsbygoogle"
-					style="display:block"
-					data-ad-client="ca-pub-5520523052926214"
-					data-ad-slot="7043279885"
-					data-ad-format="auto"></ins>
-				<script>
-				(adsbygoogle = window.adsbygoogle || []).push({});
-				</script>
-			</div>
-		</div>
-
 		<div id="game-launcher" class="row">
 
 				<div class="col-md-6">
@@ -189,14 +161,14 @@
 
 						<c:if test="${default_lang}">
 							<div class="features">
-								Play against the Freeciv AI with 2D HTML5 graphics
+								Play against the Isotrident AI with 2D HTML5 graphics
 							</div>
 						</c:if>
 						<a id="single-button" href="/webclient/?action=new" class="btn"><i class="fa fa-flag"></i> <fmt:message key="index-game-launcher-2d"/></a>
 
 						<c:if test="${default_lang}">
 							<div class="features">
-								Play against the Freeciv AI with 3D WebGL<br>graphics using the Three.js 3D engine
+								Play against the Isotrident AI with 3D WebGL<br>graphics using the Three.js 3D engine
 							</div>
 						</c:if>
 						<a href="/webclient/?action=new&renderer=webgl" class="btn" id="webgl_button"><i class="fa fa-cube"></i> <fmt:message key="index-game-launcher-3d"/></a>
@@ -239,17 +211,6 @@
 							</div>
 						</c:if>
 						<a href="/webclient/?action=hotseat" class="btn"><i class="fa fa-user-plus"></i> <fmt:message key="index-game-launcher-hotseat" /></a>
-
-						<c:if test="${default_lang}">
-							<div class="features">
-								Play a <b>Isotrident One Turn per Day</b>, where up to 300 human <br>players play one turn every day:
-							</div>
-						</c:if>
-						<a href="/webclient?action=multi&civserverport=6004&civserverhost=play&multi=true" class="btn" style="font-size: 15px; padding: 4px;">Game X - One Turn per Day</a>
-						<a href="/webclient?action=multi&civserverport=6005&civserverhost=play&multi=true" class="btn" style="font-size: 15px; padding: 4px;">Game XI - One Turn per Day</a>
-						<a href="/webclient?action=multi&civserverport=6006&civserverhost=play&multi=true" class="btn" style="font-size: 15px; padding: 4px;">Game XII - One Turn per Day</a>
-						<a href="/webclient?action=multi&civserverport=6007&civserverhost=play&multi=true" class="btn" style="font-size: 15px; padding: 4px;">Game XIII - One Turn per Day</a>
-
 					</div>
 				</div>
 		</div> <!-- end game launcher -->
@@ -267,44 +228,10 @@
 			</div> <!-- end statistics -->
 		</c:if>
 
-
-		<div id="chrome-web-store" style="display: none;" class="alert alert-warning top-buffer-3" role="alert">
-			<a href="https://chrome.google.com/webstore/detail/freeciv/ldhdjhmbapbeafmhdoobnlldhfopfcgh">
-				<img src="/static/images/chrome-web-store.png" alt="">
-			</a>
-			<a href="https://chrome.google.com/webstore/detail/freeciv/ldhdjhmbapbeafmhdoobnlldhfopfcgh">
-				<fmt:message key="index-chrome-web-store"/>
-			</a>
-		</div>
-		<div id="google-play-store" style="display: none;" class="alert alert-warning top-buffer-3" role="alert">
-			<a href="https://play.google.com/store/apps/details?id=org.freeciv.play">
-				<img src="/static/images/google-play-store.png" alt="">
-			</a>
-			<a href="https://play.google.com/store/apps/details?id=org.freeciv.play">
-				<fmt:message key="index-play-store"/>
-			</a>
-		</div>  <!-- end apps/browser plugins -->
-
-
-
-		<div class="row top-buffer-1">
-			<div class="col-md-12 ">
-				<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-				<ins class="adsbygoogle"
-					style="display:block"
-					data-ad-client="ca-pub-5520523052926214"
-					data-ad-slot="7043279885"
-					data-ad-format="auto"></ins>
-				<script>
-				(adsbygoogle = window.adsbygoogle || []).push({});
-				</script>
-			</div>
-		</div>
-
 		<div class="row">
-			<div class="col-md-6">
+			<div class="col-md-12">
 				<div class="panel-freeciv">
-					<h3>Multiplayer and One Turn per Day games:</h3>
+					<h3>Multiplayer games:</h3>
 					<c:if test="${not empty games and fn:length(games) > 0}">
 						<table class="table multiplayer-games">
 							<thead>
@@ -371,7 +298,7 @@
 				</div>
 			</div>
 
-			<div class="col-md-6 container" id="best-of-play-by-email">
+			<div class="col-md-12 container" id="best-of-play-by-email">
 				<div class="panel-freeciv">
 				    <a href="/hall_of_fame"><h2>Hall Of Fame</h2></a>
 				    See the <a href="/hall_of_fame">Hall Of Fame</a>, where the best scores of single-player games are listed!<br>
@@ -396,94 +323,16 @@
 		</div> <!-- end multiplayer/best play by email -->
 
 
-               <div class="row top-buffer-1">
-                        <div class="col-md-12">
-                                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                                <ins class="adsbygoogle"
-                                        style="display:block"
-                                        data-ad-client="ca-pub-5520523052926214"
-                                        data-ad-slot="7043279885"
-                                        data-ad-format="auto"></ins>
-                                <script>
-                                (adsbygoogle = window.adsbygoogle || []).push({});
-                                </script>
-                        </div>
-                </div>
-
-
-
-                <div class="row">
-                        <div class="col-md-12">
-                                <h2><fmt:message key="index-youtube"/></h2>
-                        </div>
-                </div>
-                <div class="row">
-                        <div class="col-md-6">
-                                <div class="videoWrapper">
-                                        <iframe class="embed-responsive-item" width="542" height="343" src="https://www.youtube.com/embed/eNuercg7Jko" frameborder="0" allowfullscreen></iframe>
-                                </div>
-                        </div>
-                       <div class="col-md-6">
-                                <div class="videoWrapper">
-                                        <iframe class="embed-responsive-item" width="542" height="343" src="https://www.youtube.com/embed/jZsq9SADdQk" frameborder="0" allowfullscreen></iframe>
-                                </div>
-                        </div>
-
-
-</div> <!-- end youtube -->
-
-
-		<div class="row" id="latest-from-blog">
-			<div class="col-md-12 container">
-				<h2><fmt:message key="index-latest-blog"/></h2>
-				<div class="panel-freeciv">
-					<ul id="latest-from-blog-articles" class="blog-post-summary">
-						<!--
-							loaded dynamically
-						-->
-					</ul>
-				</div>
-			</div>
-		</div> <!-- end blog -->
-
-			 <div  class="row" style="padding-top: 30px;">
-                                <div class="col-md-2">
-                                </div>
-                                <div class="col-md-8">
-                                    <iframe src="https://discordapp.com/widget?id=354200788785954818&theme=light" width="100%" height="400" allowtransparency="true" frameborder="0"></iframe>
-                                </div>
-                                <div class="col-md-2">
-                                </div>
-</div>
-
-
-		<div class="row">
-			<div class="col-md-12">
-				<h2><fmt:message key="index-press"/></h2>
-				<div class="well">
-					<h4><i><fmt:message key="index-press-pc-gamer-title"/></i></h4>
-					<i><fmt:message key="index-press-pc-gamer-content"/></i>
-					<br>
-					<a href="http://www.pcgamer.com/freeciv-available-in-html5-browsers-worldwide-productivity-plummets/" target="new"><img style="display: block; float: right;" src="images/pcgamer.gif" alt="PC Gamer"></a>
-					<br>
-				</div>
-			</div>
-		</div> <!-- end press -->
-		
 		<c:if test="${default_lang}">
+
 			<div class="row">
-				<div class="col-md-12">
-					<h2><fmt:message key="index-developers"/></h2>
-				</div>
-			</div> 
-			<div class="row">
-				<div class="col-md-4">
+				<div class="col-md-6">
 					<div class="panel-freeciv">
 						<h4><fmt:message key="index-contributing"/></h4>
-						Isotrident is open source software released under the GNU General Public License.
+						Isotrident is open source software released. You can contribute to the project on <a href="https://github.com/isotrident/isotrident">GitHub</a>.
 					</div>
 				</div>
-				<div class="col-md-4">
+				<div class="col-md-6">
 					<div class="panel-freeciv">
 						<h4><fmt:message key="index-stack"/></h4>
 						<img class="small" src="/static/images/webgl-stack.png">WebGL

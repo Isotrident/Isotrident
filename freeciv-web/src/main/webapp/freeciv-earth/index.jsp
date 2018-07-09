@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <c:set var="title" scope="request" value="Freeciv-Web: Real-Earth Map - design your own world map!"/>
+    <c:set var="title" scope="request" value="Isotrident: Real-Earth Map - design your own world map!"/>
     <%@ include file="../WEB-INF/jsp/fragments/head.jsp" %>
 
 <script src='https://api.mapbox.com/mapbox.js/v2.2.3/mapbox.js'></script>
@@ -56,8 +56,8 @@
 
     <div class="row">
         <div class="col-lg-8">
-		<h2>Play Freeciv-web on the real world map!</h2>
-		<b>You can now play Freeciv-web anywhere in the world map! Simply use the map above to find the location on the world map that you want to play on, then click the "Play this map" button to play Freeciv-web on the map you chose. You can for example use this map to recreate historic nations with realistic maps, or build your own nation right on your neighbourhoods map. Generating the map can take some time because it is a lot of work for your computer.</b>
+		<h2>Play Isotrident on the real world map!</h2>
+		<b>You can now play Isotrident anywhere in the world map! Simply use the map above to find the location on the world map that you want to play on, then click the "Play this map" button to play Freeciv-web on the map you chose. You can for example use this map to recreate historic nations with realistic maps, or build your own nation right on your neighbourhoods map. Generating the map can take some time because it is a lot of work for your computer.</b>
         </div>
         <div class="col-lg-4">
 		<br>

@@ -1,10 +1,10 @@
 {
-  "name": "Freeciv-web",
-  "short_name": "Freeciv-web",
+  "name": "Isotrident",
+  "short_name": "Isotrident",
   "start_url": ".",
   "display": "fullscreen",
   "background_color": "#fff",
-  "description": "Freeciv is a Free and Open Source empire-building strategy game inspired by the history of human civilization.",
+  "description": "Battle for Planet Isotrident is an epic empire-building strategy game inspired by the history of human civilization.",
   "icons": [{
     "src": "/static/images/apple-touch-icon.png",
     "sizes": "150x157",

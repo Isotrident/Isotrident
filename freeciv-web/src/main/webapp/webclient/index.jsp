@@ -22,7 +22,7 @@ if (fcwHost == null || fcwHost.isEmpty()) {
 <!DOCTYPE html>
 <html>
 <head>
-<title>Freeciv-web</title>
+<title>Battle of Planet Isotrident</title>
 <link rel="stylesheet" href="/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="/css/webclient.min.css?ts=${initParam.buildTimeStamp}" />
 <meta name="description" content="Freeciv-Web is a Free and Open Source empire-building strategy game inspired by the history of human civilization.">

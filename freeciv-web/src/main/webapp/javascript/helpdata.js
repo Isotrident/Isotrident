@@ -179,7 +179,7 @@ function handle_help_menu_select( ui )
     generate_help_text(selected_tag);
   } else if (selected_tag == "help_copying") {
     $.get( "/docs/LICENSE.txt", function( data ) {
-      $("#help_info_page").html("<h1>Freeciv-Web License</h1>" + data.replace(/\n/g, "<br>"));
+      $("#help_info_page").html("<h1>Battle for Planet Isotrident License</h1>" + data.replace(/\n/g, "<br>"));
     });
   } else if (selected_tag == "help_controls") {
     $.get( "/docs/controls.txt", function( data ) {

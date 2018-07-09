@@ -102,12 +102,12 @@ function update_game_info_pregame()
     $("#load_game_button").hide();
     $("#pregame_settings_button").hide();
     game_info_html += "<p>";
-    game_info_html += "<h2>Freeciv-web: One Turn per Day game</h2>-Each player plays one turn every day, each turn lasts 23 hours.<br>";
+    game_info_html += "<h2>Battle for Planet Isotrident: One Turn per Day game</h2>-Each player plays one turn every day, each turn lasts 23 hours.<br>";
 
 
   } else if ($.getUrlVar('action') == "multi") {
     game_info_html += "<p>";
-    game_info_html += "<h2>Freeciv-Web Multiplayer game</h2>-You are now about to play a multiplayer game.<br>-Please wait until at least 2 players have joined the game, then click the start game button.";
+    game_info_html += "<h2>Battle for Planet Isotrident Multiplayer game</h2>-You are now about to play a multiplayer game.<br>-Please wait until at least 2 players have joined the game, then click the start game button.";
     game_info_html += "</p>";
   }
 
@@ -568,7 +568,7 @@ function pregame_settings()
           "<option value='FRACTURE'>Fracture map</option>" +
     "</select></td></tr>"
     + "</table><br>"+
-	  "<span id='settings_info'><i>Freeciv-web can be customized using the command line in many " +
+	  "<span id='settings_info'><i>Battle for Planet Isotrident can be customized using the command line in many " +
           "other ways also. Type /help in the command line for more information.</i></span></div>" +
 
       "<div id='pregame_settings_tabs-2'>"+
@@ -1028,7 +1028,7 @@ function show_intro_dialog(title, message) {
     } catch (err) {
       console.error(err);
     }
-    intro_html += "<span style='color: #800000;'><small>The 3D WebGL version of Freeciv-web requires WebGL 3D hardware. Graphics level: ";
+    intro_html += "<span style='color: #800000;'><small>The 3D WebGL version of Battle for Planet Isotrident requires WebGL 3D hardware. Graphics level: ";
     if (graphics_quality == QUALITY_LOW) {
       intro_html += "Low quality.";
     } else if (graphics_quality == QUALITY_MEDIUM) {
@@ -1156,9 +1156,9 @@ function show_intro_dialog(title, message) {
 **************************************************************************/
 function show_longturn_intro_dialog() {
 
-  var title = "Welcome to Freeciv-web: One Turn per Day!"
+  var title = "Welcome to Battle for Planet Isotrident: One Turn per Day!"
 
-  var message = "<br>This is a Freeciv-web: One Turn per Day game, which is a Freeciv multiplayer game "+
+  var message = "<br>This is a Battle for Planet Isotrident: One Turn per Day game, which is a Freeciv multiplayer game "+
         "where the turns are 23 hours each, so players logs in once every day to do their turn. This format allows for more players to "+
         "play at once, more time to strategize, more time to coordinate with other players, and less rushing to get things done, which can "+
         "occur in a standard multi-player Freeciv game. It takes a lot longer to play a game, about 2 to 6 months, but you can play it just a "+
@@ -1174,7 +1174,7 @@ function show_longturn_intro_dialog() {
         "<div id='fc-signin2'></div><br><br><br><small>(Please disable adblockers, then reload the page, for Google login button to work)</small>";
 
   if (is_small_screen()) {
-    message = "Welcome to this Freeciv-web: One Turn per Day game! Enter your player name:"+
+    message = "Welcome to this Battle for Planet Isotrident: One Turn per Day game! Enter your player name:"+
       "<br><br><table><tr><td>Player name:</td><td><input id='username_req' type='text' size='25' maxlength='31'></td></tr></table>" +
       " <br><br><span id='username_validation_result' style='display:none;'></span><br><br>" +
       "<div id='fc-signin2'></div><br>";
@@ -1325,7 +1325,7 @@ function show_new_user_account_dialog(gametype)
 {
 
   var title = "New user account";
-  var message = "Create a new Freeciv-web user account with information about yourself:<br><br>"
+  var message = "Create a new Battle for Planet Isotrident user account with information about yourself:<br><br>"
                 + "<table><tr><td>Username:</td><td><input id='username' type='text' size='25' maxlength='30' onkeyup='return forceLower(this);'></td></tr>"
                 + "<tr><td>Email:</td><td><input id='email' type='email' size='25' maxlength='64' ></td></tr>"
                 + "<tr><td>Password:</td><td><input id='password' type='password' size='25'></td></tr>"
@@ -1334,7 +1334,7 @@ function show_new_user_account_dialog(gametype)
                 + "Remember your username and password, since you will need this to log in later.<br><br>"
                 + "Click to accept captcha to show that you are real human player:<br>"
                 + "<div id='captcha_element'></div><br><br>"
-                + "<div><small><ul><li>It is free and safe to create a new account on Freeciv-web.</li>"
+                + "<div><small><ul><li>It is free and safe to create a new account on Battle for Planet Isotrident.</li>"
                 + "<li>A user account allows you to save and load games.</li>"
                 + "<li>Other players can use your username to start Play-by-email games with you.</li>"
                 + "<li>You will not receive any spam and your e-mail address will be kept safe. Your password is stored securely as a secure hash.</li>"

@@ -11,12 +11,6 @@ under the GNU Affero General Public License. See [License](LICENSE.txt) for the 
 Currently known servers based on Isotrident:
 - http://isotrident.com
 
-Isotrident WebGL 3D:
-![Isotrident](https://raw.githubusercontent.com/freeciv/freeciv-web/develop/freeciv-web/src/main/webapp/javascript/webgl/freeciv-webgl.png "Isotrident WebGL screenshot")
-
-Isotrident HTML5 version:
-![Isotrident](https://raw.githubusercontent.com/freeciv/freeciv-web/develop/scripts/freeciv-web-screenshot.png "Isotrident screenshot")
-
 
 Overview
 --------

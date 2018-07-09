@@ -27,12 +27,12 @@ var invited_players = [];
 **************************************************************************/
 function show_pbem_dialog() 
 {
-  var title = "Welcome to Freeciv-web";
+  var title = "Welcome to Battle for Planet Isotrident";
   var message = "";
 
   if ($.getUrlVar('invited_by') != null) {
     var invited = $.getUrlVar('invited_by').replace(/[^a-zA-Z]/g,'');
-    message = "You have been invited by " + invited + " for a Play-by-Email game of Freeciv-web. "
+    message = "You have been invited by " + invited + " for a Play-by-Email game of Battle for Planet Isotrident. "
     + "You and " + invited + " will play alternating turns, and you will get an e-mail every time "
     + "it is your turn to play. First you can create a new user or log-in, then you will play "
     + "the first turn.";
@@ -45,7 +45,7 @@ function show_pbem_dialog()
     + "can challenge other players, and each player will be notified when "
     + "it is their turn to play through e-mail. If you are a new player, then click the sign up button below. These are the game rules:<br>" 
     + "<ul><li>The game will have between 2 and 4 human players playing alternating turns. Each player will get an e-mail when it is their turn to play.</li>"
-    + "<li>Standard Freeciv-web rules are used with some changes to map size, research speed, start units and gold to speed up games.</li>"  
+    + "<li>Standard Battle for Planet Isotrident rules are used with some changes to map size, research speed, start units and gold to speed up games.</li>"
     + "<li>Please complete your turn as soon as possible, and use at no longer than 7 days until you complete your turn.</li>"
     + "<li>Results of games with 2 players are stored to rank players.</li>"
     + "<li>Please post feedback and arrange new games on the <a href='http://forum.freeciv.org/f/viewforum.php?f=24' style='color: black;' target='_new'>forum</a>.</li>"
@@ -103,7 +103,7 @@ function login_pbem_user()
 {
 
   var title = "Log in";
-  var message = "Log in to your Freeciv-web user account:<br><br>"
+  var message = "Log in to your Battle for Planet Isotrident user account:<br><br>"
                 + "<table><tr><td>Username:</td><td><input id='username' type='text' size='25' maxlength='30' onkeyup='return forceLower(this);'></td></tr>"  
                 + "<tr><td>Password:</td><td><input id='password' type='password' size='25'> &nbsp; <a class='pwd_reset' href='#' style='color: #666666;'>Forgot password?</a></td></tr></table><br><br>"
                 + "<div id='username_validation_result' style='display:none;'></div><br><br>";
@@ -429,7 +429,7 @@ function send_pbem_invitation(email)
    type: 'POST',
    url: "/mailstatus?action=invite&to=" + email + "&from=" + username,
    success: function(data, textStatus, request){
-       swal(email + " has been invited to Freeciv-web. You will "
+       swal(email + " has been invited to Battle for Planet Isotrident. You will "
              + "receive an e-mail when it is your turn to play. Now "  
              + "you can wait for the other player.");
        $("#opponent").val("")
