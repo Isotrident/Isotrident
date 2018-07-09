@@ -1,8 +1,6 @@
 ﻿BATTLE FOR PLANET ISOTRIDENT
 ----------------------------
 
-[![Build Status](https://api.travis-ci.org/Isotrident/Isotrident-web.png)](https://travis-ci.org/Isotrident/Isotrident)
-
 'Battle for Planet Isotrident' is an open-source turn-based strategy game. It can be played in any HTML5 capable web-browser and features in-depth game-play and a wide variety of game modes and options. Your goal is to build cities, collect resources, organize your government, and build an army, with the ultimate goal of creating the best civilization. You can play online against other players (multiplayer) or play by yourself against the computer. There is both a HTML5 2D version with isometric graphics and a 3D WebGL version of Isotrident. 
 
 Isotrident is free and open source software. See [License](LICENSE.txt) for the full license document.
