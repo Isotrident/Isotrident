@@ -1,0 +1,20 @@
+/mapimg define 'zoom=2:map=tcub:turns=5:format=png'
+cmdlevel ctrl first
+set topology WRAPX
+set nationset all
+set compresstype xs
+set maxplayers 32
+set allowtake H1Ah1adOo
+set autotoggle enabled
+set netwait 30
+set nettimeout 120
+set pingtime 30
+set pingtimeout 160
+set maxconnectionsperhost 256
+set threaded_save enabled
+set scorelog enabled
+set size 5
+set landm 50
+set aifill 8
+metaconnection persistent
+metamessage New Freeciv-web Singleplayer Game

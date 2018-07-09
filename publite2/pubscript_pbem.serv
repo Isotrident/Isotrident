@@ -1,0 +1,31 @@
+cmdlevel ctrl first
+set topology WRAPX
+set nationset all
+set compresstype xs
+set maxplayers 32
+set netwait 15
+set nettimeout 120
+set pingtime 30
+set pingtimeout 120
+set maxconnectionsperhost 256
+set threaded_save enabled
+set scorelog enabled
+set size 3
+set landm 50
+set aifill 1
+set onsetbarbs 5000
+set barbarians disabled
+set civilwarsize 1000
+set minp 2
+set maxp 4
+set gold 500
+set sciencebox 50
+set startunits=ccccccwwwwwx
+set contactturns=0
+set phasemode player
+set ec_chat=enabled
+set ec_info=enabled 
+set ec_max_size=20000
+set ec_turns=32768
+metaconnection persistent
+metamessage New Freeciv-web Play-By-Email Game
