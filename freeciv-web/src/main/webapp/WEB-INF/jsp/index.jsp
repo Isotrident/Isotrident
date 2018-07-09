@@ -242,7 +242,7 @@
 
 						<c:if test="${default_lang}">
 							<div class="features">
-								Play a <b>Freeciv-web One Turn per Day</b>, where up to 300 human <br>players play one turn every day:
+								Play a <b>Isotrident One Turn per Day</b>, where up to 300 human <br>players play one turn every day:
 							</div>
 						</c:if>
 						<a href="/webclient?action=multi&civserverport=6004&civserverhost=play&multi=true" class="btn" style="font-size: 15px; padding: 4px;">Game X - One Turn per Day</a>
@@ -480,8 +480,7 @@
 				<div class="col-md-4">
 					<div class="panel-freeciv">
 						<h4><fmt:message key="index-contributing"/></h4>
-						Freeciv is open source software released under the GNU General Public License.
-						<a href="https://github.com/freeciv/freeciv-web"><fmt:message key="index-developers"/></a> and <a href="https://github.com/freeciv/freeciv-web/wiki/Contributing-Blender-models-for-Freeciv-WebGL"><fmt:message key="index-3d-artists"/></a> are welcome to join development.
+						Isotrident is open source software released under the GNU General Public License.
 					</div>
 				</div>
 				<div class="col-md-4">
@@ -497,14 +496,7 @@
 				</div>
 				<div class="col-md-4">
 					<div class="panel-freeciv">
-						<h4><fmt:message key="index-credits"/></h4>
-						<ul>
-							<li>Andreas R&oslash;sdal <i class="fa fa-twitter"></i>  <a href="https://twitter.com/andreasrosdal/">@andreasrosdal</a></li>
-							<li>Sveinung Kvilhaugsvik <i class="fa fa-github"></i>  <a href="https://github.com/kvilhaugsvik">@kvilhaugsvik</a></li>
-							<li>Marko Lindqvist <i class="fa fa-github"></i>  <a href="https://github.com/cazfi">@cazfi</a></li>
-							<li><a href="http://freeciv.wikia.com/wiki/People">Full list</a></li>
-						</ul>
-						
+
 					</div>
 				</div>
 			</div> <!-- end developers -->
