@@ -18,4 +18,4 @@ set landm 50
 set minp 2
 set generator FAIR
 metaconnection persistent
-metamessage New Freeciv-web Multiplayer Game
+metamessage New Isotrident Multiplayer Game

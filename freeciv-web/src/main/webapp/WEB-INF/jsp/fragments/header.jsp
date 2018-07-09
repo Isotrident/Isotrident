@@ -32,18 +32,6 @@
 					<li><a href="/game/list?v=play-by-email">Play by Email</a></li>
 				</ul>
 			</li>
-			<li class="dropdown">
-				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-					<span onclick="window.location='http://forum.freegamedev.net/viewforum.php?f=97'">Forums</span> <span class="caret"></span>
-				</a>
-				<ul class="dropdown-menu">
-					<li><a href="https://discord.gg/hgvR9wc">Discord chat</a></li>
-					<li role="separator" class="divider"></li>
-					<li><a href="http://forum.freegamedev.net/viewforum.php?f=97">Freeciv-web <fmt:message key="nav-forum"/></a></li>
-					<li role="separator" class="divider"></li>
-					<li><a href="https://www.reddit.com/r/freeciv">reddit.com/freeciv</a></li>
-				</ul>
-			</li>
 			<li><a href="https://github.com/isotrident/isotrident">Contribute</a></li>
 			<%--<li class="dropdown">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="${pageContext.request.locale.language} ${pageContext.request.locale.country}">
@@ -62,7 +50,7 @@
 			<input type="hidden" name="sites" value="www.isotrident.com">
 			<div class="form-group">
 				<div class="input-group">
-					<input type="text" class="form-control" name="q" placeholder="Search Freeciv...">
+					<input type="text" class="form-control" name="q" placeholder="Search Isotrident.com...">
 					<span class="input-group-btn">
 						<button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
 					</span>
