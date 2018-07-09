@@ -8,6 +8,9 @@ Isotrident is free and open source software. See [License](LICENSE.txt) for the 
 Currently known servers based on Isotrident:
 - http://isotrident.com
 
+Freeciv-web HTML5 version:
+![Freeciv-web](https://raw.githubusercontent.com/isotrident/isotrident/master/freeciv-web/src/main/webapp/static/images/freeciv-webgl-splash-48.png "Freeciv-web screenshot")
+
 
 Overview
 --------
