@@ -80,7 +80,7 @@ class MailSender():
     msg = msg.replace("{players}", plrs_txt);
     msg = msg.replace("{host}", self.host);
 
-    self.send_mailgun_message(email_address, "Freeciv-Web: It's your turn to play! Turn: " \
+    self.send_mailgun_message(email_address, "Isotrident: It's your turn to play! Turn: " \
         + str(turn), msg);
 
   def send_invitation(self, invitation_from, invitation_to):
@@ -89,33 +89,33 @@ class MailSender():
     msg = msg.replace("{sender}", sender);
     msg = msg.replace("{host}", self.host);
 
-    self.send_mailgun_message(invitation_to, "Freeciv-Web: Join my game!" , msg);
+    self.send_mailgun_message(invitation_to, "Isotrident: Join my game!" , msg);
 
 
   # send email with ranking after game is over.
   def send_game_result_mail(self, winner, winner_score, winner_email, losers, losers_score, losers_email):
     print("Sending ranklog result to " + winner_email + " and " + losers_email);
-    msg_winner = "To " + winner + "<br>You have won the game of Freeciv-web against " + losers + ".<br>";
+    msg_winner = "To " + winner + "<br>You have won the game of Isotrident against " + losers + ".<br>";
     msg_winner += "Winner score: " + winner_score + "<br>"
     msg_winner += "Loser score: " + losers_score + "<br>"
     msg = self.template_generic.replace("{message}", msg_winner);
     msg = msg.replace("{host}", self.host);
-    self.send_mailgun_message(winner_email, "Freeciv-Web: You won!", msg);
+    self.send_mailgun_message(winner_email, "Isotrident: You won!", msg);
 
-    msg_loser = "To " + losers + "<br>You have lost the game of Freeciv-web against " + winner + ".<br>";
+    msg_loser = "To " + losers + "<br>You have lost the game of Isotrident against " + winner + ".<br>";
     msg_loser += "Winner score: " + winner_score + "<br>"
     msg_loser += "Loser score: " + losers_score + "<br>"
     msg = self.template_generic.replace("{message}", msg_loser);
     msg = msg.replace("{host}", self.host);
-    self.send_mailgun_message(losers_email, "Freeciv-Web: You lost!", msg);
+    self.send_mailgun_message(losers_email, "Isotrident: You lost!", msg);
 
   # send email with reminder that game is about to expire
   def send_game_reminder(self, email, game_url):
     print("Sending game reminder email to " + email);
-    msg = "Hello! This is a reminder that it is your turn to play Freeciv-web!<br><br>";
+    msg = "Hello! This is a reminder that it is your turn to play Isotrident!<br><br>";
     msg += "<a href='" + game_url + "'>Click here to play your turn now</a> <br><br>";
     msg += "Your game will expire in 24 hours.<br>"
     msg = self.template_generic.replace("{message}", msg);
     msg = msg.replace("{host}", self.host);
-    self.send_mailgun_message(email, "Freeciv-Web: Remember to play your turn!", msg);
+    self.send_mailgun_message(email, "Isotrident: Remember to play your turn!", msg);
 
