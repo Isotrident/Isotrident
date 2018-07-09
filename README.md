@@ -5,8 +5,7 @@
 
 'Battle for Planet Isotrident' is an open-source turn-based strategy game. It can be played in any HTML5 capable web-browser and features in-depth game-play and a wide variety of game modes and options. Your goal is to build cities, collect resources, organize your government, and build an army, with the ultimate goal of creating the best civilization. You can play online against other players (multiplayer) or play by yourself against the computer. There is both a HTML5 2D version with isometric graphics and a 3D WebGL version of Isotrident. 
 
-Isotrident is free and open source software. The Freeciv C server is released under the GNU General Public License, while the Isotrident client is released
-under the GNU Affero General Public License. See [License](LICENSE.txt) for the full license document.
+Isotrident is free and open source software. See [License](LICENSE.txt) for the full license document.
 
 Currently known servers based on Isotrident:
 - http://isotrident.com
@@ -39,9 +38,9 @@ Isotrident consists of these components:
 
 * [freeciv-earth](freeciv-earth) is code to generate Freeciv savegames from a map captured from mapbox.
 
-Freeciv WebGL
+Isotrident WebGL
 -------------
-Freeciv WebGL is the 3D version, which uses the Three.js 3D engine. More info about the WebGL 3D version can be found for [developers](https://github.com/freeciv/freeciv-web/tree/develop/freeciv-web/src/main/webapp/javascript/webgl) and [3D artists](https://github.com/freeciv/freeciv-web/wiki/Contributing-Blender-models-for-Freeciv-WebGL).
+Isotrident WebGL is the 3D version, which uses the Three.js 3D engine. More info about the WebGL 3D version can be found for [developers](https://github.com/freeciv/freeciv-web/tree/develop/freeciv-web/src/main/webapp/javascript/webgl) and [3D artists](https://github.com/freeciv/freeciv-web/wiki/Contributing-Blender-models-for-Freeciv-WebGL).
 
 Running Isotrident on your computer
 ------------------------------------
