@@ -325,7 +325,15 @@
 
 		<div class="row">
 			<div class="col-md-12">
+				<iframe src="https://discordapp.com/widget?id=471270045855514624&theme=dark" width="100%" height="500" allowtransparency="true" frameborder="0"></iframe>
+			</div>
+		</div> 
+
+		<div class="row">
+			<div class="col-md-6">
 				<img src="/static/images/fp-2d.png" alt="" style="width: 100%;">
+			</div>
+			<div class="col-md-6">
 				<img src="/static/images/fp-webgl.png" alt="" style="width: 100%;">
 			</div>
 		</div> 
