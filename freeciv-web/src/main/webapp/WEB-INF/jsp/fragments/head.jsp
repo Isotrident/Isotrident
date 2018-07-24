@@ -1,4 +1,4 @@
-<title>${empty title ? "Battle for Planet Isotrident - an epic turn-based strategy game" : title}</title>
+<title>${empty title ? "Isotrident - an epic turn-based strategy game" : title}</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="author" content="The Isotrident project">

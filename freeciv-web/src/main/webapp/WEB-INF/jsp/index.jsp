@@ -137,14 +137,14 @@
 					<p class="lead">
 						<fmt:message key="index-lead"/>
 
-                         <%--<div class="row top-buffer-3">
-                         <h1>Join Freeciv-web: One Turn per Day game XII</h1>
-                         <b>Game XII XI has started and you can join it now!</b><br>
+                         <div class="row top-buffer-3">
+                         <h1>Join Freeciv-web: One Turn per Day game IX</h1>
+                         <b>Game IX has started and you can join it now!</b><br>
                          <b>Each player will play one turn every day. <br><br>
-                         This will be one of the greatest ever multiplayer game of Freeciv with 300 players on 30000 map tiles!<br>
+                         This will be one of the greatest ever multiplayer game of Freeciv with 150 players on 30000 map tiles!<br>
                          </b>
-                         <h2><a href="/webclient/?action=multi&civserverport=6006&civserverhost=play&multi=true">Join the LongTurn Web XII here!</a></h2>
-			            </div>--%>
+                         <h2><a href="/webclient/?action=multi&civserverport=6003&civserverhost=play&multi=true">Join the LongTurn Web IX here!</a></h2>
+			            </div>
 
 					</p>
 				</div>
@@ -323,8 +323,16 @@
 		</div> <!-- end multiplayer/best play by email -->
 
 
-		<c:if test="${default_lang}">
+		<div class="row">
+			<div class="col-md-12">
+				<img src="/static/images/fp-2d.png" alt="" style="width: 100%;">
+				<img src="/static/images/fp-webgl.png" alt="" style="width: 100%;">
+			</div>
+		</div> 
 
+
+
+		<c:if test="${default_lang}">
 			<div class="row">
 				<div class="col-md-6">
 					<div class="panel-freeciv">
