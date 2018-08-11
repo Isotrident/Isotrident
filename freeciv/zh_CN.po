@@ -24595,7 +24595,7 @@ msgstr ""
 "直升飞机能够得到。<"
 
 #: data/default/default.lua:22 server/unittools.c:2912
-#, fuzzy, c-format
+#, c-format
 msgid "You found %d gold."
 msgid_plural "You found %d gold."
 msgstr[0] "您找到 %d 黄金。"

@@ -4,7 +4,7 @@
 <div style="text-align: center;">
 <center>
 
-<h2>Game Options</h2>
+<h2 id="game_options">Game Options</h2>
 
 <div class="main_menu_buttons">
 <b>Music:</b><br>

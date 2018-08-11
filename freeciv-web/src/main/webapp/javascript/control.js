@@ -855,7 +855,7 @@ function advance_unit_focus()
       }
     }
     $("#turn_done_button").button("option", "label", "<i class='fa fa-check-circle-o' style='color: green;'aria-hidden='true'></i> Turn Done");
-    if (!end_turn_info_message_shown) {
+    if (!end_turn_info_message_shown && lang != 'cn') {
       end_turn_info_message_shown = true;
       message_log.update({ event: E_BEGINNER_HELP, message: "All units have moved, click the \"Turn Done\" button to end your turn."});
     }
@@ -882,7 +882,7 @@ function update_unit_order_commands()
     pcity = tile_city(ptile);
 
     if (pcity != null) {
-      unit_actions["show_city"] = {name: "Show city"};
+      unit_actions["show_city"] = {name: i18next.t("Show city")};
     }
   }
 
@@ -896,7 +896,7 @@ function update_unit_order_commands()
     if (utype_can_do_action(ptype, ACTION_FOUND_CITY)
         && pcity == null) {
       $("#order_build_city").show();
-      unit_actions["build"] = {name: "Build city (B)"};
+      unit_actions["build"] = {name: i18next.t("Build city") + " (B)"};
     } else if (utype_can_do_action(ptype, ACTION_JOIN_CITY)
                && pcity != null) {
       $("#order_build_city").show();
@@ -906,14 +906,14 @@ function update_unit_order_commands()
     }
 
     if (ptype['name'] == "Explorer") {
-      unit_actions["explore"] = {name: "Auto explore (X)"};
+      unit_actions["explore"] = {name: i18next.t("Auto explore") + " (X)"};
     }
 
   }
 
   unit_actions = $.extend(unit_actions, {
-                   "goto": {name: "Unit goto (G)"},
-	               "tile_info": {name: "Tile info"}
+                   "goto": {name: i18next.t("Unit goto") + " (G)"},
+	               "tile_info": {name: i18next.t("Tile info")}
                  });
 
   for (i = 0; i < funits.length; i++) {
@@ -1098,9 +1098,9 @@ function update_unit_order_commands()
   }
 
   unit_actions = $.extend(unit_actions, {
-            "sentry": {name: "Sentry (S)"},
-            "wait": {name: "Wait (W)"},
-            "disband": {name: "Disband (Shift-D)"}
+            "sentry": {name: i18next.t("Sentry") + " (S)"},
+            "wait": {name: i18next.t("Wait") + " (W)"},
+            "disband": {name: i18next.t("Disband") + " (Shift-D)"}
             });
 
   if (is_touch_device()) {
@@ -2110,7 +2110,7 @@ function activate_goto_last(last_order, last_action)
   goto_last_action = last_action;
 
   if (current_focus.length > 0) {
-    if (intro_click_description) {
+    if (intro_click_description && lang != 'cn') {
       if (is_touch_device()) {
         message_log.update({
           event: E_BEGINNER_HELP,
@@ -2126,11 +2126,13 @@ function activate_goto_last(last_order, last_action)
     }
 
   } else {
-    message_log.update({
-      event: E_BEGINNER_HELP,
-      message: "First select a unit to move by clicking on it, then click on the"
+    if (lang != 'cn') {
+      message_log.update({
+        event: E_BEGINNER_HELP,
+        message: "First select a unit to move by clicking on it, then click on the"
              + " goto button or the 'G' key, then click on the position to move to."
-    });
+      });
+    }
     deactivate_goto(false);
   }
 

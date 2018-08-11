@@ -106,6 +106,7 @@ function handle_server_join_reply(packet)
       }
       if (loadTimerId == -1) {
         wait_for_text("You are logged in as", pregame_start_game);
+        if (lang == 'cn') setTimeout(pregame_start_game, 1500);
       } else {
         wait_for_text("Load complete", pregame_start_game);
       }

@@ -127,7 +127,7 @@ public class Games {
 			connection = ds.getConnection();
 			query = "SELECT COUNT(*) AS count " //
 					+ "FROM servers s " //
-					+ "WHERE type = 'singleplayer' AND state = 'Running'";
+					+ "WHERE type IN ('singleplayer', 'singleplayer_cn') AND state = 'Running'";
 			statement = connection.prepareStatement(query);
 			rs = statement.executeQuery();
 			rs.next();
@@ -177,7 +177,7 @@ public class Games {
 					+ "   WHERE name = 'turn' " //
 					+ "	    AND hostport = CONCAT(s.host ,':',s.port)) + 0 AS turnsort " //
 					+ "FROM servers s " //
-					+ "WHERE type = 'singleplayer' " //
+					+ "WHERE type IN ('singleplayer', 'singleplayer_cn') " //
 					+ "AND state = 'Running' " //
 					+ "AND message NOT LIKE '%Multiplayer%' " //
 					+ "ORDER BY turnsort DESC";

@@ -146,10 +146,6 @@
 
 				<div class="col-md-12">
 					<div class="game-type">
-						<div class="header">
-							<span class="name"><i class="fa fa-user"></i> &#x5355;&#x4EBA;&#x73A9;&#x5BB6; </span>
-						</div>
-
 
 						<a id="single-button" href="/webclient/?action=new" class="btn"><i class="fa fa-flag"></i> &#x65B0;&#x6E38;&#x620F;  </a>
 
@@ -159,12 +155,7 @@
 
 						<a href="/webclient/?action=load&amp;scenario=true" class="btn"><i class="fa fa-map-o"></i> &#x811A;&#x672C;</a>
 
-					</div>
 
-					<div class="game-type">
-						<div class="header">
-							<span class="name"><i class="fa fa-users"></i> &#x591A;&#x4EBA;</span>
-						</div>
 						<a href="/game/list?v=multiplayer" class="btn"><i class="fa fa-users"></i> &#x591A;&#x4EBA;</a>
 
 					</div>
@@ -183,6 +174,8 @@
 			</div>
 		</div> 
 
+
+
 		<div class="row">
 			<div class="col-md-12">
 				<br><br>
@@ -190,6 +183,14 @@
 			</div>
 		</div> 
 
+
+       <div class="row">
+			<div class="col-md-12">
+                <center>
+                    <h3>Wenming.io can be played in English on <a href="https://www.isotrident.com">isotrident.com</a>.</h3>
+			       </center>
+			</div>
+		</div>
 
         <div class="row">
 			<div class="col-md-12">

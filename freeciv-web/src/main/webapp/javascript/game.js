@@ -89,7 +89,7 @@ function update_game_status_panel() {
       net_income = "+" + pplayer['expected_income'];
     }
 
-    if (!is_small_screen()) status_html += "<b>" + nations[pplayer['nation']]['adjective'] + "</b> &nbsp;&nbsp; <i class='fa fa-child' aria-hidden='true' title='Population'></i>: ";
+    if (!is_small_screen() && lang != 'cn') status_html += "<b>" + nations[pplayer['nation']]['adjective'] + "</b> &nbsp;&nbsp; <i class='fa fa-child' aria-hidden='true' title='Population'></i>: ";
     if (!is_small_screen()) status_html += "<b>" + civ_population(client.conn.playing.playerno) + "</b>  &nbsp;&nbsp;";
     if (!is_small_screen()) status_html += "<i class='fa fa-clock-o' aria-hidden='true' title='Year (turn)'></i>: <b>" + get_year_string() + "</b> &nbsp;&nbsp;";
     status_html += "<i class='fa fa-money' aria-hidden='true' title='Gold (net income)'></i>: ";
@@ -158,6 +158,9 @@ function get_year_string()
   } else {
     year_string += "(Turn:" + game_info['turn'] + ")";
   }
+
+  if (lang == 'cn') year_string = i18next.t("year") +  game_info['turn']
+
   return year_string;
 }
 

@@ -1,0 +1,25 @@
+<h1>Wenming.io Online Manual</h1>
+
+Wenming.io is a Free and Open Source empire-building strategy game inspired by the
+history of human civilization. The game commences in prehistory and your mission  
+is to lead your tribe from the Stone Age to the Space Age...<br><br>
+
+Wenming.io is free and open source software, released under the <a href="https://www.gnu.org/licenses/agpl-3.0.html" target='_new'>
+GNU Affero General Public License</a>. The Freeciv C server is released under the 
+<a href="https://www.gnu.org/licenses/gpl-2.0.html" target='_new'>GNU General
+Public License</a>. <br>
+
+
+
+<br><br>
+
+
+<br><br>
+
+You can also find more information about Wenming.io and Freeciv here:
+
+<a href='http://www.Wenming.io/' target='_new'>Wenming.io</a>
+<br><a href='http://www.freeciv.org/wiki/' target='_new'>Freeciv Wiki</a><br>
+<a href='http://forum.freeciv.org/' target='_new'>Freeciv Forum</a><br>
+<a href='https://github.com/Wenming.io/Wenming.io' target='_new'>Wenming.io on Github</a><br>
+<a href='http://freeciv.wikia.com/wiki/Bug_Reporting' target='_new'>Bug Reporting</a><br>

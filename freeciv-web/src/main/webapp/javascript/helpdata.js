@@ -63,9 +63,18 @@ function show_help()
 **************************************************************************/
 function show_help_intro()
 {
-  $.get( "/docs/help_intro.txt", function( data ) {
-      $("#help_info_page").html(data);
-  });
+  if (lang == 'en') {
+    $.get( "/docs/help_intro.txt", function( data ) {
+        $("#help_info_page").html(data);
+    });
+  }
+
+  if (lang == 'cn') {
+      $.get( "/docs/help_intro_cn.txt", function( data ) {
+          $("#help_info_page").html(data);
+      });
+    }
+
 }
 
 /**************************************************************************

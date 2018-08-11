@@ -1,6 +1,6 @@
 <div>
 
-    <h2>Your Cities</h2>
+    <h2 id="your_cities">Your Cities</h2>
 
     <div id="cities_scroll">
         <div id="cities">

@@ -139,11 +139,28 @@
 		<div>
 			<ul class="nav nav-tabs hidden-xs" role="tablist">
 				<li role="presentation" class="${view == 'singleplayer' or empty view ? 'active' : ''}"><a href="#single-player-tab"
-					aria-controls="single-player" role="tab" data-toggle="tab">Single-player (${singlePlayerGames})</a></li>
+					aria-controls="single-player" role="tab" data-toggle="tab">
+                    <c:if test = "${lang == 'en' || empty lang}">
+                        Single-player
+                    </c:if>
+                    <c:if test = "${lang == 'cn'}">
+                        &#x5355;&#x4EBA;&#x73A9;&#x5BB6;
+                    </c:if>
+					(${singlePlayerGames})</a></li>
 				<li role="presentation" class="${view == 'multiplayer' ? 'active' : ''}"><a href="#multi-player-tab"
-					aria-controls="multi-player" role="tab" data-toggle="tab">Multiplayer (${multiPlayerGames})</a></li>
-				<li role="presentation" class="${view == 'play-by-email' ? 'active' : ''}"><a href="#play-by-email-tab"
-					aria-controls="play-by-email" role="tab" data-toggle="tab">Play-By-Email</a></li>
+					aria-controls="multi-player" role="tab" data-toggle="tab">
+                    <c:if test = "${lang == 'en' || empty lang}">
+                        Multiplayer
+                    </c:if>
+                    <c:if test = "${lang == 'cn'}">
+                        &#x591A;&#x4EBA;
+                    </c:if>
+
+					(${multiPlayerGames})</a></li>
+                    <c:if test = "${lang == 'en' || empty lang}">
+    				    <li role="presentation" class="${view == 'play-by-email' ? 'active' : ''}"><a href="#play-by-email-tab"
+	    			    	aria-controls="play-by-email" role="tab" data-toggle="tab">Play-By-Email</a></li>
+	    		    </c:if>
 			</ul>
 			<ul class="nav nav-tabs hidden-lg hidden-md hidden-sm" role="tablist">
 				<li role="presentation" class="${view == 'singleplayer' or empty view ? 'active' : ''}"><a href="#single-player-tab"

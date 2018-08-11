@@ -358,6 +358,12 @@
 			<div class="row">
 				<div class="col-md-6">
 					<div class="panel-freeciv">
+
+                        <a href="http://www.wenming.io"><img src="/static/images/webming-ad.png" alt="" style="width: 95%;"></a><br>
+                        <h3>Play Isotrident in Chinese at <a href="http://www.wenming.io">Wenming.io</a></h3>
+                        <br><br><br><br>
+
+
 						<h4><fmt:message key="index-contributing"/></h4>
 						Isotrident is open source software released. You can contribute to the project on <a href="https://github.com/isotrident/isotrident">GitHub</a>.
 					</div>
@@ -380,6 +386,13 @@
 				</div>
 			</div> <!-- end developers -->
 		</c:if>
+
+
+
+
+
+
+
 
 
 		<%@include file="/WEB-INF/jsp/fragments/footer.jsp"%>

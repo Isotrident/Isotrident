@@ -228,7 +228,7 @@ function update_tech_tree()
 
       tech_canvas_ctx.font = tech_canvas_text_font;
       tech_canvas_ctx.fillStyle = "rgba(0, 0, 0, 1)";
-      tech_canvas_ctx.fillText(ptech['name'], x + 50, y + 15);
+      tech_canvas_ctx.fillText(i18next.t(ptech['name']), x + 50, y + 15);
 
       if (x > maxleft) maxleft = x;
 
@@ -257,7 +257,7 @@ function update_tech_tree()
         tech_canvas_ctx.font = tech_canvas_text_font;
         tech_canvas_ctx.fillStyle = 'rgb(255, 255, 255)';
       }
-      tech_canvas_ctx.fillText(ptech['name'], x + 51, y + 16);
+      tech_canvas_ctx.fillText(i18next.t(ptech['name']), x + 51, y + 16);
 
     /* UNKNOWN TECHNOLOGY. */
     } else if (player_invention_state(client.conn.playing, ptech['id']) == TECH_UNKNOWN) {
@@ -281,7 +281,7 @@ function update_tech_tree()
         tech_canvas_ctx.fillStyle = 'rgb(255, 255, 255)';
         tech_canvas_ctx.font = tech_canvas_text_font;
       }
-      tech_canvas_ctx.fillText(ptech['name'], x + 51, y + 16);
+      tech_canvas_ctx.fillText(i18next.t(ptech['name']), x + 51, y + 16);
     }
 
     var tech_things = 0;
@@ -370,11 +370,11 @@ function update_tech_screen()
 
   var research_goal_text = "No research target selected.<br>Please select a technology now";
   if (techs[client.conn.playing['researching']] != null) {
-    research_goal_text = "Researching: " + techs[client.conn.playing['researching']]['name'];
+    research_goal_text = i18next.t("researching") + ": " + i18next.t(techs[client.conn.playing['researching']]['name']);
   }
   if (techs[client.conn.playing['tech_goal']] != null) {
-    research_goal_text = research_goal_text + "<br>Research Goal: "
-        + techs[client.conn.playing['tech_goal']]['name'];
+    research_goal_text = research_goal_text + "<br>" + i18next.t("Research Goal") + ": "
+        + i18next.t(techs[client.conn.playing['tech_goal']]['name']);
   }
   $("#tech_goal_box").html(research_goal_text);
 
@@ -415,6 +415,8 @@ function update_tech_screen()
 function get_advances_text(tech_id)
 {
   var ptech = techs[tech_id];
+
+  if (lang == 'cn') return "";
 
   var adv_txt = "<span onclick='show_tech_info_dialog(\"" +ptech['name'] + "\", null, null);'>" + ptech['name'] + "</span> (" + Math.floor(ptech['cost']) + ") allows ";
   var prunits = get_units_from_tech(tech_id);

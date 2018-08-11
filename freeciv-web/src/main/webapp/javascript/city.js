@@ -798,8 +798,10 @@ function city_name_dialog(suggested_name, unit_id) {
   $("#city_name_dialog").remove();
   $("<div id='city_name_dialog'></div>").appendTo("div#game_page");
 
-  $("#city_name_dialog").html($("<div>What should we call our new city?</div>"
-                              + "<input id='city_name_req' type='text'>"));
+  $("#city_name_dialog").html($("<div>"
+        + i18next.t("What should we call our new city?")
+        + "</div>"
+        + "<input id='city_name_req' type='text'>"));
 
   /* A suggested city name can contain an apostrophe ("'"). That character
    * is also used for single quotes. It shouldn't be added unescaped to a
@@ -811,7 +813,7 @@ function city_name_dialog(suggested_name, unit_id) {
    * like below or by escaping the string. */
   $("#city_name_req").attr("value", suggested_name);
 
-  $("#city_name_dialog").attr("title", "Build New City");
+  $("#city_name_dialog").attr("title", i18next.t("Build New City"));
   $("#city_name_dialog").dialog({
 			bgiframe: true,
 			modal: true,
@@ -820,13 +822,13 @@ function city_name_dialog(suggested_name, unit_id) {
 				keyboard_input=true;
 			},
 			buttons: [	{
-					text: "Cancel",
+					text: i18next.t("Cancel"),
 				        click: function() {
 						$("#city_name_dialog").remove();
                         keyboard_input=true;
 					}
 				},{
-					text: "Ok",
+					text: i18next.t("Ok"),
 				        click: function() {
 						var name = $("#city_name_req").val();
 						if (name.length == 0 || name.length >= MAX_LEN_CITYNAME - 6
@@ -1199,13 +1201,13 @@ function rename_city()
 				keyboard_input=true;
 			},
 			buttons: [	{
-					text: "Cancel",
+					text: i18next.t("Cancel"),
 				        click: function() {
 						$("#city_name_dialog").remove();
         					keyboard_input=true;
 					}
 				},{
-					text: "Ok",
+					text: i18next.t("Ok"),
 				        click: function() {
 						var name = $("#city_name_req").val();
 						if (name.length == 0 || name.length >= MAX_LEN_NAME - 4

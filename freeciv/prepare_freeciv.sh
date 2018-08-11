@@ -24,6 +24,8 @@ if ! ./apply_patches.sh ; then
   exit 1
 fi
 
+cp zh_CN.po freeciv/translations/core/
+
 ( cd freeciv
 
   ./autogen.sh CFLAGS="-O3" --enable-mapimg=magickwand --with-project-definition=../freeciv-web.project --enable-fcweb --enable-json --disable-delta-protocol --disable-fcmp --enable-freeciv-manual=html --disable-ruledit --enable-fcdb=no --enable-ai-static=classic,threaded --prefix=${HOME}/freeciv/ && make -s -j$(nproc)

@@ -108,7 +108,7 @@ function update_nation_screen()
 
   $("#nations_list").html(nation_list_html);
 
-  $("#nations_title").html("Nations of the World");
+  $("#nations_title").html(i18next.t("Nations of the World"));
   $("#nations_label").html("Human players: " + no_humans + ". AIs: " + no_ais + ". Inactive/dead: " + (total_players - no_humans - no_ais) + ".");
 
   select_no_nation();
