@@ -35,7 +35,7 @@ metaport = 8080
 metapath =  "/freeciv-web/meta/metaserver"
 statuspath =  "/freeciv-web/meta/status"
 settings_file = "settings.ini"
-game_types = ["singleplayer", "multiplayer", "pbem"]
+game_types = ["singleplayer", "multiplayer", "pbem", "singleplayer_cn"]
 
 metachecker_interval = 40
 port = 6000
@@ -53,6 +53,8 @@ class metachecker():
       settings.read(settings_file)
       self.server_capacity_single = int(settings.get("Resource usage", "server_capacity_single",
                                               fallback = 5))
+      self.server_capacity_single_cn = int(settings.get("Resource usage", "server_capacity_single_cn",
+                                              fallback = 5))      
       self.server_capacity_multi = int(settings.get("Resource usage", "server_capacity_multi",
                                               fallback = 2))
       self.server_capacity_pbem = int(settings.get("Resource usage", "server_capacity_pbem",
@@ -72,6 +74,7 @@ class metachecker():
       self.check_count = 0;
       self.total = 0;
       self.single = 0;
+      self.single_cn = 0;
       self.multi = 0;
       self.pbem = 0;
       self.html_doc = "-";
@@ -96,6 +99,7 @@ class metachecker():
               self.single = int(meta_status[2]);
               self.multi = int(meta_status[3]);
               self.pbem = int(meta_status[4]);
+              self.single_cn = int(meta_status[5]);
 
               fork_bomb_preventer = (self.total == 0 and self.server_limit < len(self.server_list))
               if fork_bomb_preventer:
@@ -107,13 +111,24 @@ class metachecker():
                      and self.total <= self.server_limit
                      and not fork_bomb_preventer):
                 time.sleep(1)
-                new_server = Civlauncher(game_types[0], game_types[0], port, metahost + ":" + str(metaport) + metapath, self.savesdir);
+                new_server = Civlauncher(game_types[9], game_types[0], port, metahost + ":" + str(metaport) + metapath, self.savesdir);
                 self.server_list.append(new_server);
                 new_server.start();
                 port += 1;
                 self.total += 1;
                 self.single += 1;
  
+              while (self.single_cn < self.server_capacity_single_cn
+                     and self.total <= self.server_limit
+                     and not fork_bomb_preventer):
+                time.sleep(1)
+                new_server = Civlauncher(game_types[3], game_types[3], port, metahost + ":" + str(metaport) + metapath, self.savesdir);
+                self.server_list.append(new_server);
+                new_server.start();
+                port += 1;
+                self.total += 1;
+                self.single_cn += 1;
+
               while (self.multi < self.server_capacity_multi
                      and self.total <= self.server_limit
                      and not fork_bomb_preventer):

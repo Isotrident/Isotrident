@@ -10,6 +10,7 @@ longturn_server_ports=6003,6004,6005,6006,6007
 
 [Resource usage]
 server_capacity_single = 2
+server_capacity_single_cn = 2
 server_capacity_multi = 1
 server_capacity_pbem = 1
 server_limit = 250

@@ -134,18 +134,7 @@
 	
 	<!-- Begin page content -->
 	<div id="content" class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<script async
-					src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-				<ins class="adsbygoogle" style="display: block"
-					data-ad-client="ca-pub-5520523052926214" data-ad-slot="7043279885"
-					data-ad-format="auto"> </ins>
-				<script>
-						(adsbygoogle = window.adsbygoogle || []).push({});
-					</script>
-			</div>
-		</div>
+
 
 		<div>
 			<ul class="nav nav-tabs hidden-xs" role="tablist">
@@ -329,19 +318,6 @@
 				</div>
 			</div>
 
-		    <div class="row">
-    			<div class="col-md-12">
-    				<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    				<ins class="adsbygoogle"
-    					style="display:block"
-    					data-ad-client="ca-pub-5520523052926214"
-    					data-ad-slot="7043279885"
-    					data-ad-format="auto"></ins>
-    				<script>
-    				(adsbygoogle = window.adsbygoogle || []).push({});
-    				</script>
-    			</div>
-    		</div>
 
 		</div>
 
