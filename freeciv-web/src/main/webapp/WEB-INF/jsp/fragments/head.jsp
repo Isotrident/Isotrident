@@ -1,18 +1,17 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<title>
 
-   <c:if test = "${lang == 'en' || empty lang}">
-        ${empty title ? "Isotrident - an epic turn-based strategy game" : title}
-        <meta name="author" content="The Isotrident project">
-        <meta name="description" content="Play Isotrident online with 2d HTML5 or 3D WebGL in the browser. Isotrident is a Free and Open Source empire-building strategy game made with 2D HTML5 or 3D WebGL mode, which you can play in your browser, tablet or mobile device!">
-    </c:if>
-    <c:if test = "${lang == 'cn'}">
-        ${empty title ? "Wenming.io &#x6587;&#x660E;  &#x6E38;&#x620F;" : title}
-        <meta name="author" content="Wenming.io">
-        <meta name="description" content="Wenming.io &#x6587;&#x660E;  &#x6E38;&#x620F;">
-    </c:if>
-</title>
+<c:if test = "${lang == 'en' || empty lang}">
+    <title>${empty title ? "Isotrident - an epic turn-based strategy game" : title}</title>
+    <meta name="author" content="The Isotrident project">
+    <meta name="description" content="Play Isotrident online with 2d HTML5 or 3D WebGL in the browser. Isotrident is a Free and Open Source empire-building strategy game made with 2D HTML5 or 3D WebGL mode, which you can play in your browser, tablet or mobile device!">
+</c:if>
+<c:if test = "${lang == 'cn'}">
+    <title>${empty title ? "Wenming.io &#x6587;&#x660E;  &#x6E38;&#x620F;" : title}</title>
+    <meta name="author" content="Wenming.io">
+    <meta name="description" content="Wenming.io &#x6587;&#x660E;  &#x6E38;&#x620F;">
+</c:if>
+
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
