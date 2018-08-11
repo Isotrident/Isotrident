@@ -4,15 +4,18 @@
 
    <c:if test = "${lang == 'en' || empty lang}">
         ${empty title ? "Isotrident - an epic turn-based strategy game" : title}
+        <meta name="author" content="The Isotrident project">
+        <meta name="description" content="Play Isotrident online with 2d HTML5 or 3D WebGL in the browser. Isotrident is a Free and Open Source empire-building strategy game made with 2D HTML5 or 3D WebGL mode, which you can play in your browser, tablet or mobile device!">
     </c:if>
     <c:if test = "${lang == 'cn'}">
         ${empty title ? "Wenming.io &#x6587;&#x660E;  &#x6E38;&#x620F;" : title}
+        <meta name="author" content="Wenming.io">
+        <meta name="description" content="Wenming.io &#x6587;&#x660E;  &#x6E38;&#x620F;">
     </c:if>
 </title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name="author" content="The Isotrident project">
-<meta name="description" content="Play Isotrident online with 2d HTML5 or 3D WebGL in the browser. Isotrident is a Free and Open Source empire-building strategy game made with 2D HTML5 or 3D WebGL mode, which you can play in your browser, tablet or mobile device!">
+
 <meta name="google-site-verification" content="Dz5U0ImteDS6QJqksSs6Nq7opQXZaHLntcSUkshCF8I" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta property="og:image" content="/static/images/frontpage-jumbotron-alt.png" />
