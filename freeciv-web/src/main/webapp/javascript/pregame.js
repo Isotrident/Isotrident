@@ -1014,7 +1014,9 @@ function show_intro_dialog(title, message) {
   $("#dialog").remove();
   $("<div id='dialog'></div>").appendTo("div#game_page");
 
-  var intro_html = message + "<br><br><table><tr><td>Player name:</td><td><input id='username_req' type='text' size='25' maxlength='31'></td></tr>"
+  var intro_html = message + "<br><br><table><tr><td>" +
+   i18next.t("player_name") + ":"
+      + "</td><td><input id='username_req' type='text' size='25' maxlength='31'></td></tr>"
       +  "<tr id='password_row' style='display:none;'><td>Password:</td><td id='password_td'></td></tr></table>"
 	  + " <br><br><span id='username_validation_result' style='display:none;'></span><br><br>";
 
@@ -1058,7 +1060,7 @@ function show_intro_dialog(title, message) {
   } else if ($.getUrlVar('action') == "multi") {
     join_game_customize_text = "Join Game";
   } else {
-    join_game_customize_text = "Customize Game";
+    join_game_customize_text = i18next.t("customize_game");
   }
 
   $("#dialog").attr("title", title);
@@ -1081,7 +1083,7 @@ function show_intro_dialog(title, message) {
 			buttons:
 			[
 			  {
-				  text : "Start Game",
+				  text : i18next.t('start_game'),
 				  click : function() {
                      if (is_touch_device() || is_small_screen()) {
                        BigScreen.toggle();
@@ -1125,6 +1127,8 @@ function show_intro_dialog(title, message) {
     // Not allowed to create a new user account when already logged in.
     $(".ui-dialog-buttonset button").last().button("disable");
   }
+
+  if (lang == 'cn') $(".ui-dialog-buttonset button").last().hide();
 
   if (is_small_screen()) {
     /* some fixes for pregame screen on small devices.*/
@@ -1692,7 +1696,7 @@ function google_signin_on_success(googleUser)
   xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
   xhr.onload = function() {
     if (xhr.responseText == "Failed" || xhr.responseText == null || xhr.responseText.length < 5) {
-      swal("Login failed.");
+      swal("Login failed on Google Signin.");
     } else if (xhr.responseText == "Email not verified") {
       swal("Login failed. E-mail not verified.");
     } else {

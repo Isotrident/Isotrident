@@ -124,12 +124,17 @@ function update_game_status_panel() {
   }
 
 
-  var page_title = "Battle for Planet Isotrident - " + username
+  var page_title = "Isotrident.com - " + username
                                     + "  (turn:" + game_info['turn'] + ", port:"
                                     + civserverport + ") ";
   if (server_settings['metamessage'] != null) {
     page_title += server_settings['metamessage']['val'];
   }
+
+  if (lang == 'cn') {
+    page_title = dec("Wenming.io &#x6587;&#x660E;  &#x6E38;&#x620F;");
+  }
+
   document.title = page_title;
 
 

@@ -192,3 +192,11 @@ function get_tileset_file_extention()
   }
 
 }
+
+function enc(value){
+  return $('<div/>').text(value).html();
+}
+
+function dec(value){
+  return $('<div/>').html(value).text();
+}

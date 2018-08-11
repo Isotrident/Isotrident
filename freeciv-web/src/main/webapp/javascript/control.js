@@ -1121,7 +1121,7 @@ function init_game_unit_panel()
   if (observing) return;
   unitpanel_active = true;
 
-  $("#game_unit_panel").attr("title", "Units");
+  $("#game_unit_panel").attr("title", i18next.t("units"));
   $("#game_unit_panel").dialog({
 			bgiframe: true,
 			modal: false,

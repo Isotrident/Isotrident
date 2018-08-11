@@ -18,6 +18,13 @@ if (googleSigninClientKey == null) {
 if (fcwHost == null || fcwHost.isEmpty()) {
   fcwHost = request.getServerName();
 }
+String host = request.getHeader("host");
+if (host.contains("wenming") || host.contains("localhost")) {
+    request.setAttribute("lang", "cn");
+} else {
+    request.setAttribute("lang", "en");
+}
+
 %>
 <!DOCTYPE html>
 <html>
@@ -32,7 +39,16 @@ if (fcwHost == null || fcwHost.isEmpty()) {
   gtag('config', 'UA-121990025-1');
 </script>
 
-<title>Battle of Planet Isotrident</title>
+<title>
+
+   <c:if test = "${lang == 'en' || empty lang}">
+        Isotrident.com
+    </c:if>
+    <c:if test = "${lang == 'cn'}">
+        Wenming.io &#x6587;&#x660E;  &#x6E38;&#x620F;
+    </c:if>
+
+</title>
 <link rel="stylesheet" href="/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="/css/webclient.min.css?ts=${initParam.buildTimeStamp}" />
 <meta name="description" content="Freeciv-Web is a Free and Open Source empire-building strategy game inspired by the history of human civilization.">

@@ -138,9 +138,8 @@
 						<fmt:message key="index-lead"/>
 
                          <div class="row top-buffer-3">
-                         <h1>Join Freeciv-web: One Turn per Day game IX</h1>
-                         <b>Game IX has started and you can join it now!</b><br>
-                         <b>Each player will play one turn every day. <br><br>
+                         <h2>Join Freeciv-web: One Turn per Day game IX</h2>
+                         <b>Game IX has started and you can join it now! Each player will play one turn every day. <br><br>
                          This will be one of the greatest ever multiplayer game of Freeciv with 150 players on 30000 map tiles!<br>
                          </b>
                          <h2><a href="/webclient/?action=multi&civserverport=6003&civserverhost=play&multi=true">Join the LongTurn Web IX here!</a></h2>
@@ -214,6 +213,20 @@
 					</div>
 				</div>
 		</div> <!-- end game launcher -->
+
+        <div class="row">
+                        <div class="col-md-6">
+                                <div class="videoWrapper">
+                                        <iframe class="embed-responsive-item" width="542" height="343" src="https://www.youtube.com/embed/53-TKNk-3qY" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                        </div>
+                        <div class="col-md-6">
+                                <div class="videoWrapper">
+                                        <iframe class="embed-responsive-item" width="542" height="343" src="https://www.youtube.com/embed/_8GttrtzBIY" frameborder="0" allowfullscreen></iframe>
+                                  </div>
+                        </div>
+
+        </div> <!-- end youtube -->
 
 
 		<c:if test="${default_lang}">

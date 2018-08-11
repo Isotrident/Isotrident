@@ -23,7 +23,7 @@ button {
 
 #freeciv_logo {
   float:left; 
-  background: #444444 url(/images/freeciv-web-logo.png);
+  background: #444444 url(/static/images/brand.png);
   width: 138px; 
   height: 35px; 
   margin-right: 10px;

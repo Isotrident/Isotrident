@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <nav class="navbar navbar-inverse navbar-fixed-top">
 	<div class="container">
 		<!-- Brand and toggle get grouped for better mobile display -->
@@ -10,30 +11,76 @@
 		</button>
 		<a class="navbar-brand" href="/">
 			<!--Logo font is: Liberation Sans Bold Italic -->
-			<img src="/static/images/brand.png" alt="Freeciv-web">
+
+<!-- ${lang}
+<%= request.getHeader("Host") %>
+-->
+
+            <c:if test = "${lang == 'en' || empty lang}">
+                <img src="/static/images/brand.png" alt="Isotrident">
+            </c:if>
+            <c:if test = "${lang == 'cn'}">
+                <img src="/static/images/brand_cn.png" alt="Wenming.io">
+            </c:if>
+
 		</a>
 		</div>
 
 		<!-- Collect the nav links, forms, and other panel-freeciv for toggling -->
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		<ul class="nav navbar-nav">
-			<li><a href="/webclient/?action=new">New Game</a></li>
+			<li><a href="/webclient/?action=new">
+			   <c:if test = "${lang == 'en' || empty lang}">
+                    New game
+                </c:if>
+                <c:if test = "${lang == 'cn'}">
+                    &#x65B0;&#x6E38;&#x620F;
+                </c:if>
+
+			</a></li>
 			<li class="dropdown">
 				<a href="/game/list?v=singleplayer" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-					<span onclick="window.location='/game/list?v=singleplayer'">Online Games</span> <span class="caret"></span> <span class="badge ongoing-games-number" id="ongoing-games" title="Ongoing games"></span>
+					<span onclick="window.location='/game/list?v=singleplayer'">
+
+                   <c:if test = "${lang == 'en' || empty lang}">
+                            Online games
+                    </c:if>
+                    <c:if test = "${lang == 'cn'}">
+                            &#x6E38;&#x620F;
+                   </c:if>
+
+
+
+					</span>
+					<c:if test = "${lang == 'en' || empty lang}">
+					    <span class="caret"></span>
+                    </c:if>
+                    <span class="badge ongoing-games-number" id="ongoing-games" title="Ongoing games"></span>
 				</a>
-				<ul class="dropdown-menu">
-					<li><a href="/game/list?v=singleplayer">Single-player</a></li>
-					<li role="separator" class="divider"></li>
-					<li><a href="/game/list?v=multiplayer">Multiplayer</a></li>
-					<li role="separator" class="divider"></li>
-					<li><a href="/game/list?v=multiplayer">One Turn per Day</a></li>
-					<li role="separator" class="divider"></li>
-					<li><a href="/game/list?v=play-by-email">Play by Email</a></li>
-				</ul>
+				<c:if test = "${lang == 'en' || empty lang}">
+                    <ul class="dropdown-menu">
+                        <li><a href="/game/list?v=singleplayer">Single-player</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="/game/list?v=multiplayer">Multiplayer</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="/game/list?v=multiplayer">One Turn per Day</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="/game/list?v=play-by-email">Play by Email</a></li>
+                    </ul>
+                </c:if>
 			</li>
-			<li><a href="https://github.com/isotrident/isotrident">Contribute</a></li>
-			<li><a href="https://discord.gg/GDtQnYe">Chat</a></li>
+			<c:if test = "${lang == 'en' || empty lang}">
+			    <li><a href="https://github.com/isotrident/isotrident">Contribute</a></li>
+			</c:if>
+
+			<c:if test = "${lang == 'en' || empty lang}">
+			    <li><a href="https://discord.gg/GDtQnYe">Chat</a></li>
+			  </c:if>
+            <c:if test = "${lang == 'cn'}">
+                 <li><a href="https://discord.gg/4hQX5dc">&#x804A;</a></li>
+            </c:if>
+
+
 			<%--<li class="dropdown">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="${pageContext.request.locale.language} ${pageContext.request.locale.country}">
 					Language <span class="caret"></span>
@@ -47,17 +94,9 @@
 				</ul>
 			</li>--%>
 		</ul>
-		<form class="navbar-form navbar-right hidden-sm hidden-md" action="https://duckduckgo.com/" style="width: 220px;">
-			<input type="hidden" name="sites" value="www.isotrident.com">
-			<div class="form-group">
-				<div class="input-group">
-					<input type="text" class="form-control" name="q" placeholder="Search Isotrident.com...">
-					<span class="input-group-btn">
-						<button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
-					</span>
-				</div>
-			</div>
-		</form>
+
+
+
 		</div><!-- end navbar-collapse -->
 	</div><!-- end container-fluid -->
 </nav> <!-- end nav -->

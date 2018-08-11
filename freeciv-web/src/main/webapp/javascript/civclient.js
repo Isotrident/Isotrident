@@ -89,6 +89,9 @@ function civclient_init()
     return;
   }
 
+
+  init_i18n();
+
   if (is_longturn() && observing) {
     swal("LongTurn games can't be observed.");
     return;
@@ -195,6 +198,9 @@ function init_common_intro_dialog() {
 
   } else if ($.getUrlVar('action') == "hotseat") {
     show_hotseat_dialog();
+
+  } else if (lang == 'cn') {
+        show_intro_dialog(i18next.t('welcome_title'), i18next.t('welcome_message'));
 
   } else if (is_small_screen()) {
     if (is_longturn()) {
@@ -384,7 +390,7 @@ function update_timeout()
         $("#turn_done_button").button("option", "label", "Turn " + remaining);
         $("#turn_done_button .ui-button-text").css("padding", "3px");
       } else {
-        $("#turn_done_button").button("option", "label", "Turn Done (" + seconds_to_human_time(remaining) + ")");
+        $("#turn_done_button").button("option", "label", i18next.t('turn_done') + " (" + seconds_to_human_time(remaining) + ")");
       }
       if (!is_touch_device()) $("#turn_done_button").tooltip({ disabled: false });
     }
@@ -404,7 +410,7 @@ function update_turn_change_timer()
         + (last_turn_change_time - turn_change_elapsed) + ")");
   } else {
     turn_change_elapsed = 0;
-    $("#turn_done_button").button("option", "label", "Turn Done"); 
+    $("#turn_done_button").button("option", "label", i18next.t('turn_done'));
   }
 }
 

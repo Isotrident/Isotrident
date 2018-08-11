@@ -31,7 +31,7 @@ function init_chatbox()
 
   chatbox_active = true;
 
-  $("#game_chatbox_panel").attr("title", "Messages");
+  $("#game_chatbox_panel").attr("title", i18next.t('messages'));
   $("#game_chatbox_panel").dialog({
 			bgiframe: true,
 			modal: false,
@@ -136,6 +136,10 @@ function add_chatbox_text(packet)
     if (packet['event'] === E_CHAT_MSG) {
       packet['event'] = reclassify_chat_message(text);
     }
+
+  if (lang == 'cn') {
+    text = text.replace("BCE", "");
+  }
 
     if (civclient_state <= C_S_PREPARING) {
       text = text.replace(/#FFFFFF/g, '#000000');

@@ -66,6 +66,7 @@ function network_init()
   if ($.getUrlVar('action') != null) civclient_request_url += "?action=" + $.getUrlVar('action');
   if ($.getUrlVar('action') == null && $.getUrlVar('civserverport') != null) civclient_request_url += "?";
   if ($.getUrlVar('civserverport') != null) civclient_request_url += "&civserverport=" + $.getUrlVar('civserverport');
+  civclient_request_url += "&lang=" + lang;
 
   $.ajax({
    type: 'POST',
@@ -93,7 +94,7 @@ function network_init()
 ****************************************************************************/
 function websocket_init()
 {
-  $.blockUI({ message: "<h2>Please wait while connecting to the server.</h2>" });
+  if (lang != 'cn') $.blockUI({ message: "<h2>Please wait while connecting to the server.</h2>" });
   var proxyport = 1000 + parseFloat(civserverport);
   var ws_protocol = ('https:' == window.location.protocol) ? "wss://" : "ws://";
   var port = window.location.port ? (':' + window.location.port) : '';
@@ -152,7 +153,7 @@ function check_websocket_ready()
     }
 
     if (is_longturn() && google_user_subject == null) {
-      swal("Login failed.");
+      swal("Login failed in Auth.");
       return;
     }
 

@@ -51,6 +51,14 @@ public class GameList extends HttpServlet {
 			request.setAttribute("multiPlayerGamesList", games.getMultiPlayerGames());
 			request.setAttribute("playByEmailStatistics", statistics.getPlayByEmailWinners());
 			request.setAttribute("view", request.getParameter("v"));
+
+			String host = request.getHeader("host");
+			if (host.contains("wenming") || host.contains("localhost")) {
+				request.setAttribute("lang", "cn");
+			} else {
+				request.setAttribute("lang", "en");
+			}
+
 		} catch (RuntimeException err) {
 			throw err;
 			// Ohh well, we tried ...

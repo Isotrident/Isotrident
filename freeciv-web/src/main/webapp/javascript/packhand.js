@@ -1087,9 +1087,9 @@ function handle_begin_turn(packet)
   if (!observing) {
     $("#turn_done_button").button("option", "disabled", false);
     if (is_small_screen()) {
-      $("#turn_done_button").button("option", "label", "Turn Done");
+      $("#turn_done_button").button("option", "label", i18next.t('turn_done'));
     } else {
-      $("#turn_done_button").button("option", "label", "Turn Done");
+      $("#turn_done_button").button("option", "label", i18next.t('turn_done'));
     }
   }
   waiting_units_list = [];

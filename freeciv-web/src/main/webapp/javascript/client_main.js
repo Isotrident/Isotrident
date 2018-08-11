@@ -155,6 +155,8 @@ function setup_window_size ()
   if (overview_active) init_overview();
   if (unitpanel_active) init_game_unit_panel();
 
+  init_i18n();
+
 }
 
 function client_state()
@@ -214,6 +216,9 @@ function show_new_game_message()
   } else if (is_hotseat()) {
     show_hotseat_new_phase();
     return;
+  } else if (lang == 'cn') {
+    message = i18next.t("welcome_text");
+
   } else if (is_pbem()) {
     message = "Welcome " + username + "! It is now your turn to play. Each player will " +
       "get an e-mail when it is their turn to play, and can only play one turn at a time. " +

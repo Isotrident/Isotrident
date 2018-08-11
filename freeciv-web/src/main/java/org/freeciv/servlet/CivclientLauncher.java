@@ -47,6 +47,8 @@ public class CivclientLauncher extends HttpServlet {
 
 		String civServerPort = request.getParameter("civserverport");
 
+		String lang = request.getParameter("lang");
+
 		Connection conn = null;
 		try {
 			Context env = (Context) (new InitialContext().lookup("java:comp/env"));
@@ -61,7 +63,11 @@ public class CivclientLauncher extends HttpServlet {
 			case "multi":
 			case "hotseat":
 			case "earthload":
-				gameType = "singleplayer";
+				if (lang.equals("cn")) {
+					gameType = "singleplayer_cn";
+				} else {
+					gameType = "singleplayer";
+				}
 				break;
 			case "pbem":
 				gameType = "pbem";

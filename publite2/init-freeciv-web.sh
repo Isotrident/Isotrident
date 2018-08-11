@@ -21,6 +21,15 @@ fi
 export FREECIV_SAVE_PATH=${1};
 rm -f /var/lib/tomcat8/webapps/data/scorelogs/score-${2}.log; 
 
+
+if [ $5 = "singleplayer_cn" ]; then
+  export LANG=zh_CN
+  export LANGUAGE=zh_CN
+else
+  export LANG=en_US.UTF-8
+  export LANGUAGE=en_US.UTF-8
+fi
+
 python3 ../freeciv-proxy/freeciv-proxy.py ${3} > ../logs/freeciv-proxy-${3}.log 2>&1 &
 proxy_pid=$! && 
 ${HOME}/freeciv/bin/freeciv-web --debug=1 --port ${2} --keep ${quitidle} --Announce none -e  -m \

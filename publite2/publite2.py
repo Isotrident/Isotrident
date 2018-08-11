@@ -94,7 +94,7 @@ class metachecker():
           if (r1.status == 200):
             self.html_doc = r1.read()
             meta_status = self.html_doc.decode('ascii').split(";");
-            if (len(meta_status) == 5):
+            if (len(meta_status) == 6):
               self.total = int(meta_status[1]);
               self.single = int(meta_status[2]);
               self.multi = int(meta_status[3]);
@@ -111,7 +111,7 @@ class metachecker():
                      and self.total <= self.server_limit
                      and not fork_bomb_preventer):
                 time.sleep(1)
-                new_server = Civlauncher(game_types[9], game_types[0], port, metahost + ":" + str(metaport) + metapath, self.savesdir);
+                new_server = Civlauncher(game_types[0], game_types[0], port, metahost + ":" + str(metaport) + metapath, self.savesdir);
                 self.server_list.append(new_server);
                 new_server.start();
                 port += 1;
@@ -157,7 +157,7 @@ class metachecker():
 
         except Exception as e:
           self.html_doc = ("Error: Publite2 is unable to connect to Freeciv-web metaserver on http://" + 
-                          metahost + metapath + ", error" + str(e));
+                  metahost + metapath + ", error: " + str(e));
           print(self.html_doc);
         finally:
           conn.close();

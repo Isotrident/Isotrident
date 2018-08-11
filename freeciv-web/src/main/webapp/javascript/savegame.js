@@ -318,10 +318,10 @@ function load_game_check()
         show_scenario_dialog();
       } else {
         var scenario_game_id = scenarios[load_game_id]['savegame'];
-        wait_for_text("You are logged in as", function () {
-          load_game_real(scenario_game_id);
-        });
-        wait_for_text("Load complete", load_game_toggle);
+
+        load_game_real(scenario_game_id);
+
+        setTimeout("load_game_toggle();", 3000);
       }
     }
   } else if (scenario == "true" && $.getUrlVar('load') != "tutorial") {
@@ -420,17 +420,17 @@ function show_scenario_dialog()
   $("#dialog").dialog({
 			bgiframe: true,
 			modal: true,
-			width: is_small_screen() ? "90%" : "40%",
+			width: is_small_screen() ? "90%" : "90%",
 			position: {my: 'center bottom', at: 'center bottom', of: window},
 			buttons: {
                                 "Cancel" : function() {
-					$("#dialog").dialog('close');
+				        	$("#dialog").dialog('close');
                                 },
-                                "Create map from image upload.." : function() {
+                                "Map image upload.." : function() {
                                   $("#dialog").dialog('close');
                                   show_map_from_image_dialog();
                                 },
-	  			"Select scenario": function() {
+	  			    "Select scenario": function() {
 	  			    if ($('#selectable .ui-selected').index() == -1) {
 	  			        swal("Please select a scenario first.");
 	  			    } else {

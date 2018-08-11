@@ -55,7 +55,7 @@ function init_overview()
 
   overview_active = true;
 
-  $("#game_overview_panel").attr("title", "World map");
+  $("#game_overview_panel").attr("title", i18next.t("world_map"));
   $("#game_overview_panel").dialog({
 			bgiframe: true,
 			modal: false,

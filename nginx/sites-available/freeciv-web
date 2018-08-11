@@ -2,7 +2,7 @@
 
     server {
         listen       80;
-        include /etc/nginx/snippets/freeciv-web-ssl.conf;
+        #include /etc/nginx/snippets/freeciv-web-ssl.conf;
         tcp_nodelay on; 
  
         gzip  on;
@@ -135,19 +135,23 @@
 	location = / {
           proxy_pass         http://localhost:8080/freeciv-web/;
           proxy_redirect     off;
+	  proxy_set_header   Host             $host;
 	}
 
 
 	# proxy for app-server on port 8080
 	location ~ / {
         rewrite ^(.*)$ /freeciv-web/$1 break;
-        proxy_pass         http://localhost:8080;
-        proxy_redirect     off;
-
 
         proxy_set_header   Host             $host;
         proxy_set_header   X-Real-IP        $remote_addr;
         proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
+
+        proxy_pass         http://localhost:8080;
+        proxy_redirect     off;
+
+
+
         proxy_max_temp_file_size 0;
 
         client_max_body_size       3m;

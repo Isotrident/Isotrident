@@ -1,4 +1,14 @@
-<title>${empty title ? "Isotrident - an epic turn-based strategy game" : title}</title>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<title>
+
+   <c:if test = "${lang == 'en' || empty lang}">
+        ${empty title ? "Isotrident - an epic turn-based strategy game" : title}
+    </c:if>
+    <c:if test = "${lang == 'cn'}">
+        ${empty title ? "Wenming.io &#x6587;&#x660E;  &#x6E38;&#x620F;" : title}
+    </c:if>
+</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="author" content="The Isotrident project">
@@ -108,6 +118,14 @@
 		background:#BE602D;
 	}
 	.nav {
-		font-size: 16px;
+		font-size: 17px;
 	}
+
+	<c:if test = "${lang == 'cn'}">
+	.nav {
+		font-size: 40px;
+	}
+    </c:if>
+
+
 </style>

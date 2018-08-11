@@ -98,8 +98,8 @@ public class RecentServerStatistics extends HttpServlet {
 				result.append(rs.getInt(1));
 				count++;
 			}
-			if (count != 4) {
-				throw new Exception("Expected 4 rows of data. Obtained " + i);
+			if (count != 5) {
+				throw new Exception("Expected 5 rows of data. Obtained " + i);
 			}
 
 			response.getOutputStream().print(result.toString());

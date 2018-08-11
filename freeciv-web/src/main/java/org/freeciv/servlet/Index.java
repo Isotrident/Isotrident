@@ -47,7 +47,20 @@ public class Index extends HttpServlet {
 			// Ohh well, we tried ...
 		}
 
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/jsp/index.jsp");
+		String host = request.getHeader("host");
+		if (host.contains("wenming") || host.contains("localhost")) {
+			request.setAttribute("lang", "cn");
+		} else {
+			request.setAttribute("lang", "en");
+		}
+
+		String url;
+		if (host.contains("wenming") || host.contains("localhost")) {
+			url = "/WEB-INF/jsp/index_cn.jsp";
+		} else {
+			url = "/WEB-INF/jsp/index.jsp";
+		}
+		RequestDispatcher rd = request.getRequestDispatcher(url);
 		rd.forward(request, response);
 
 	}
