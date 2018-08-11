@@ -50,7 +50,7 @@ cn: {
   "nations" : dec("&#x56FD;&#x5BB6;"),
   "cities" : dec("&#x57CE;&#x5E02;"),
   "options" : dec("&#x8BBE;&#x7F6E;"),
-  "help" : dec("&#x5E2E;&#x5E2E;&#x6211;"),
+  "help" : dec("&#x5E2E;&#x52A9;"),
   "turn_done" : dec("&#x5B8C;&#x6210;&#x4E86;"),
   "messages" : dec("&#x6D88;&#x606F;"),
   "world_map" : dec("&#x4E16;&#x754C;&#x5730;&#x56FE;"),
