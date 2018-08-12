@@ -9,7 +9,8 @@ Please contribute patches upstream here:
 https://github.com/freeciv/freeciv-web
 
 Currently known servers based on Isotrident:
-- http://isotrident.com
+- https://isotrident.com
+- http://wenming.io
 
 Freeciv-web HTML5 version:
 ![Freeciv-web](https://raw.githubusercontent.com/isotrident/isotrident/master/freeciv-web/src/main/webapp/static/images/freeciv-webgl-splash-48.png "Freeciv-web screenshot")
