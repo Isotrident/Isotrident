@@ -854,7 +854,7 @@ function advance_unit_focus()
         }
       }
     }
-    $("#turn_done_button").button("option", "label", "<i class='fa fa-check-circle-o' style='color: green;'aria-hidden='true'></i> Turn Done");
+    $("#turn_done_button").button("option", "label", "<i class='fa fa-check-circle-o' style='color: green;'aria-hidden='true'></i> " + i18next.t('turn_done'));
     if (!end_turn_info_message_shown && lang != 'cn') {
       end_turn_info_message_shown = true;
       message_log.update({ event: E_BEGINNER_HELP, message: "All units have moved, click the \"Turn Done\" button to end your turn."});

@@ -176,7 +176,7 @@
 		<!--<div class="row">
 			<div class="col-md-12">
 				<br><br>
-				<iframe src="https://discordapp.com/widget?id=477868896335167490&theme=dark" width="97%" height="250" allowtransparency="true" frameborder="0"></iframe>
+				<iframe src="https://discordapp.com/widget?id=471270045855514624&theme=dark" width="100%" height="300" allowtransparency="true" frameborder="0"></iframe>
 			</div>
 		</div>-->
 
