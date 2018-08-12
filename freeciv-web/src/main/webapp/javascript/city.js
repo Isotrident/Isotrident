@@ -241,13 +241,13 @@ function show_city_dialog(pcity)
   update_map_canvas(0, 0, mapview['store_width'], mapview['store_height']);
   renderer = orig_renderer;
 
-  $("#city_size").html("Population: " + numberWithCommas(city_population(pcity)*1000) + "<br>"
-                       + "Size: " + pcity['size'] + "<br>"
-                       + "Granary: " + pcity['food_stock'] + "/" + pcity['granary_size'] + "<br>"
-                       + "Change in: " + city_turns_to_growth_text(pcity));
+  $("#city_size").html(i18next.t("Population") + ": " + numberWithCommas(city_population(pcity)*1000) + "<br>"
+                       + i18next.t("Size") + ": " + pcity['size'] + "<br>"
+                       + i18next.t("Granary: ") + pcity['food_stock'] + "/" + pcity['granary_size'] + "<br>"
+                       + i18next.t("Change in:") + " " + city_turns_to_growth_text(pcity));
 
   var prod_type = get_city_production_type_sprite(pcity);
-  $("#city_production_overview").html("Producing: " + (prod_type != null ? prod_type['type']['name'] : "None"));
+  $("#city_production_overview").html(i18next.t("Production:") + (prod_type != null ? i18next.t(prod_type['type']['name']) : "None"));
 
   turns_to_complete = get_city_production_time(pcity);
 
@@ -1370,7 +1370,7 @@ function city_worklist_dialog(pcity)
            ");background-position:-" + sprite['tileset-x'] + "px -" + sprite['tileset-y']
            + "px;  width: " + sprite['width'] + "px;height: " + sprite['height'] + "px;'"
            +"></div></td>"
-     + "<td class='prod_choice_name'>" + universal['name'] + "</td>"
+     + "<td class='prod_choice_name'>" + i18next.t(universal['name']) + "</td>"
      + "<td class='prod_choice_cost'>" + universal['build_cost'] + "</td></tr>";
   }
   worklist_html += "</table>";
@@ -1406,18 +1406,18 @@ function city_worklist_dialog(pcity)
   }
 
   var headline = prod_img_html + "<div id='prod_descr'>" 
-    + (is_small_screen() ? " " : " Production: ") 
-    + (prod_type != null ? prod_type['type']['name'] : "None");
+    + (is_small_screen() ? " " : i18next.t("Production:"))
+    + (prod_type != null ? i18next.t(prod_type['type']['name']) : "None");
 
   if (turns_to_complete != FC_INFINITY) {
-    headline += ", turns: " + turns_to_complete;
+    headline += ", " + i18next.t("Turns")+ ": " + turns_to_complete;
   }
 
   $("#worklist_dialog_headline").html(headline + "</div>");
 
   $(".production_list_item_sub").tooltip();
 
-  if (is_touch_device()) {
+  if (is_touch_device() && lang != 'cn') {
     $("#prod_buttons").html("<x-small>Click to change production, next clicks will add to worklist on mobile.</x-small>");
   }
 
@@ -1487,7 +1487,7 @@ function populate_worklist_production_choices(pcity)
            ");background-position:-" + sprite['tileset-x'] + "px -" + sprite['tileset-y']
            + "px;  width: " + sprite['width'] + "px;height: " + sprite['height'] + "px;'"
            +"></div></td>"
-       + "<td class='prod_choice_name'>" + production_list[a]['text'] + "</td>"
+       + "<td class='prod_choice_name'>" + i18next.t(production_list[a]['text']) + "</td>"
        + "<td class='prod_choice_name'>" + production_list[a]['unit_details'] + "</td>"
        + "<td class='prod_choice_cost'>" + production_list[a]['build_cost'] + "</td></tr>";
      }
