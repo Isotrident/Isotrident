@@ -179,7 +179,7 @@ function show_city_dialog(pcity)
          rename_city();
        }
      });
-   } else {
+   } else if (lang != "cn") {
        dialog_buttons = $.extend(dialog_buttons,
          {
           "Next" : function() {

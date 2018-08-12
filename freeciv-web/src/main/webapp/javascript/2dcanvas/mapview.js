@@ -129,7 +129,7 @@ function is_small_screen()
 **************************************************************************/
 function init_sprites()
 {
-  $.blockUI({ message: "<h1>Battle for Planet Isotrident is loading. Please wait..."
+  $.blockUI({ message: "<h1>Loading. Please wait..."
 	  + "<br><center><img src='/images/loading.gif'></center></h1>" });
 
   if (loaded_images != tileset_image_count) {

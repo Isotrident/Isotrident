@@ -984,7 +984,7 @@ function update_unit_order_commands()
         $("#order_forest_remove").show();
         $("#order_irrigate").hide();
         $("#order_build_farmland").hide();
-	    unit_actions["forest"] = {name: "Cut down forest (I)"};
+	    if (lang != 'cn') unit_actions["forest"] = {name: "Cut down forest (I)"};
       } else if (!tile_has_extra(ptile, EXTRA_IRRIGATION)) {
         $("#order_irrigate").show();
         $("#order_forest_remove").hide();

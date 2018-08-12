@@ -1016,9 +1016,10 @@ function show_intro_dialog(title, message) {
 
   var intro_html = message + "<br><br><table><tr><td>" +
    i18next.t("player_name") + ":"
-      + "</td><td><input id='username_req' type='text' size='25' maxlength='31'></td></tr>"
+      + "</td><td><input id='username_req' type='text' size='" + (is_small_screen() ? "15" : "25") +  "' maxlength='31'></td></tr>"
       +  "<tr id='password_row' style='display:none;'><td>Password:</td><td id='password_td'></td></tr></table>"
-	  + " <br><br><span id='username_validation_result' style='display:none;'></span><br><br>";
+	  + " <br><br><span id='username_validation_result' style='display:none;'></span>";
+  if (!is_small_screen) message += "<br><br>";
 
   if (renderer == RENDERER_WEBGL) {
     try {
