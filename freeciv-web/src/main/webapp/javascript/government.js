@@ -81,13 +81,20 @@ function init_civ_dialog()
 	    civ_description += "<img src='/images/flags/" + tag + "-web" + get_tileset_file_extention() + "' width='180'>";
 	}
 
-    civ_description += "<br><div>" + pplayer['name'] + " rules the " + nations[pplayer['nation']]['adjective']
+    if (lang != 'cn') civ_description += "<br><div>" + pplayer['name'] + " rules the " + nations[pplayer['nation']]['adjective']
 	    + " with the form of government: " + governments[client.conn.playing['government']]['name']
 	    + "</div><br>";
-    $("#nation_title").html("The " + nations[pplayer['nation']]['adjective'] + " nation");
+
+    if (lang != 'cn') {
+      $("#nation_title").html("The " + nations[pplayer['nation']]['adjective'] + " nation");
+    } else {
+      $("#nation_title").html(i18next.t("Nation") + " " + nations[pplayer['nation']]['adjective'] );
+    }
+
+
     $("#civ_dialog_text").html(civ_description);
 
-  } else {
+  } else if (lang != 'cn') {
     $("#civ_dialog_text").html("This dialog isn't available as observer.");
 
   }

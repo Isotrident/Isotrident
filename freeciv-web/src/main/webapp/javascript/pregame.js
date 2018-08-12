@@ -1030,15 +1030,17 @@ function show_intro_dialog(title, message) {
     } catch (err) {
       console.error(err);
     }
-    intro_html += "<span style='color: #800000;'><small>The 3D WebGL version of Battle for Planet Isotrident requires WebGL 3D hardware. Graphics level: ";
-    if (graphics_quality == QUALITY_LOW) {
-      intro_html += "Low quality.";
-    } else if (graphics_quality == QUALITY_MEDIUM) {
-      intro_html += "Medium quality.";
-    } else {
-      intro_html += "High quality.";
+    if (lang != 'cn') {
+      intro_html += "<span style='color: #800000;'><small>The 3D WebGL version of Battle for Planet Isotrident requires WebGL 3D hardware. Graphics level: ";
+      if (graphics_quality == QUALITY_LOW) {
+        intro_html += "Low quality.";
+      } else if (graphics_quality == QUALITY_MEDIUM) {
+        intro_html += "Medium quality.";
+      } else {
+        intro_html += "High quality.";
+      }
+      intro_html += "</small></span>";
     }
-    intro_html += "</small></span>";
   }
 
   $("#dialog").html(intro_html);

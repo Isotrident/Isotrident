@@ -378,8 +378,9 @@ function update_tech_screen()
   }
   $("#tech_goal_box").html(research_goal_text);
 
-  $("#tech_progress_text").html("Research progress: "
-                                + client.conn.playing['bulbs_researched']
+  var progress_txt = "Research progress: ";
+  if (lang =='cn') progress_txt = "";
+  $("#tech_progress_text").html(progress_txt + client.conn.playing['bulbs_researched']
                                 + " / "
                                 + client.conn.playing['researching_cost']);
 
@@ -565,7 +566,7 @@ function get_tech_infobox_html(tech_id)
 	   + ");background-position:-" + tileset_x + "px -" + tileset_y
            + "px;  width: " + width + "px;height: " + height + "px;'"
            + "'></div>"
-	   +  ptech['name']
+	   +  i18next.t(ptech['name'])
 	   + "</div>";
   }
 
@@ -620,8 +621,11 @@ function show_tech_gained_dialog(tech_gained_id)
   var tech = techs[tech_gained_id];
   if (tech == null) return;
 
-  var title = tech['name'] + " discovered!";
-  var message = "The " + nations[pplayer['nation']]['adjective'] + " have discovered " + tech['name'] + ".<br>";
+  var title = i18next.t(tech['name']);
+
+  var message = i18next.t("The %s have researched %s.").replace("%s", nations[pplayer['nation']]['adjective']).replace("%s", i18next.t(tech['name']));
+  if (lang == 'cn') message = i18next.t(tech['name']);
+
   message += "<span id='tech_advance_helptext'>" + get_advances_text(tech_gained_id) + "</span>";
 
   var tech_choices = [];
@@ -633,7 +637,8 @@ function show_tech_gained_dialog(tech_gained_id)
     }
   }
 
-  message += "<br>You can now research:<br><div id='tech_gained_choice'>";
+  if (lang != 'cn') message += "<br>You can now research:";
+  message += "<br><div id='tech_gained_choice'>";
   for (var i = 0; i < tech_choices.length; i++) {
     message += get_tech_infobox_html(tech_choices[i]['id']);
   }
@@ -911,6 +916,7 @@ function get_current_bulbs_output_text(cbo)
   var text;
   if (cbo.self_bulbs === 0 && cbo.self_upkeep === 0) {
     text = "No bulbs researched";
+    if (lang == 'cn') text = "0";
   } else {
     text = cbo.self_bulbs;
     var net = cbo.self_bulbs - cbo.self_upkeep;

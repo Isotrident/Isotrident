@@ -19,6 +19,8 @@
 
 var lang = "en";  // valid values are:  'en', 'cn'
 
+var is_i18n_init = false;
+
 var freeciv_strings = {
 en: {
   translation: {
@@ -42,7 +44,7 @@ cn: {
   "welcome_message" : dec("&#x6B22;&#x8FCE;&#x6765;&#x5230;&#x6587;&#x660E;&#x3002; &#x8F93;&#x5165;&#x4F60;&#x7684;&#x540D;&#x5B57;&#x3002;"),
   "player_name" : dec("&#x540D;&#x79F0;"),
   "load_game" : dec("&#x52A0;&#x8F7D;&#x6E38;&#x620F;"),
-  "pick_nation" : dec("&#x56FD;&#x5BB6;"),
+  "pick_nation" : dec("&#x9009;&#x62E9;&#x56FD;&#x5BB6;"),
   "welcome_text" : dec("&#x6B22;&#x8FCE;&#x6765;&#x5230;&#x6587;&#x660E;"),
   "map" : dec("&#x5730;&#x56FE;"),
   "government" : dec("&#x653F;&#x5E9C;"),
@@ -178,20 +180,38 @@ function init_i18n()
   lang = get_language();
 
 
-  i18next.init({
-    lng: lang,
-    debug: true,
-    resources: freeciv_strings, function(err, t) {
-    // initialized and ready to go!
-    }
-  });
+  if (!is_i18n_init) {
 
+    if (lang == 'cn') {
+      // created with https://github.com/i18next/i18next-gettext-converter
+      $.ajax({
+          async: false,
+          url: "/translations/zh_CN.js",
+          dataType: "script"
+      });
+      freeciv_strings['cn']['translation'] = $.extend(freeciv_strings['cn']['translation'], lang_zn);
+    }
+
+
+    i18next.init({
+      lng: lang,
+      debug: (location.host == 'localhost'),
+      resources: freeciv_strings, function(err, t) {
+      // initialized and ready to go!
+      }
+    });
+    is_i18n_init = true;
+  }
   if (lang == 'cn') {
     $("#freeciv_logo").css("background","#444 url(/static/images/brand_cn.png)");
     $("#freeciv_logo").css("width","213px");
     //$("#freeciv_logo").css("margin-top","30px");
 
     $('body').css("font-size","115%");
+    if (is_small_screen()) {
+      $('#tabs').css("font-size","90%");
+      $(".ui-tabs-anchor").css("padding", "3px");
+    }
 
     $("#start_game_button").text(i18next.t('start_game'));
     $("#load_game_button").text(i18next.t('load_game'));
@@ -202,6 +222,7 @@ function init_i18n()
     $("#pregame_settings_button").hide();
     //$("#pregame_buttons").css("margin-top", "40px");
     //$("#pregame_options").css("background", "black");
+    $("#tech_color_help").hide();
 
     $("#map_tab").children().first().first().text(i18next.t("map"));
     $("#civ_tab").children().first().first().text(i18next.t("government"));
@@ -210,6 +231,13 @@ function init_i18n()
     $("#cities_tab").children().first().first().text(i18next.t("cities"));
     $("#opt_tab").children().first().first().text(i18next.t("options"));
     $("#hel_tab").children().first().first().text(i18next.t("help"));
+
+    $("#revolution_button").text(i18next.t("Revolution"));
+    $("#taxrates_button").text(i18next.t("Tax Rates"));
+    $("#wonders_report").text(i18next.t("Wonders"));
+    $("#top_cities_report").text(i18next.t("Top _Five Cities"));
+    $("#demography_report").text(i18next.t("_Demographics"));
+    $("#spaceship_report").text(i18next.t("_Spaceship"));
 
 
   }

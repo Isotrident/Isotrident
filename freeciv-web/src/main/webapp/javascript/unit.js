@@ -175,7 +175,7 @@ function get_unit_moves_left(punit)
     return 0;
   }
 
-  return "Moves:" + move_points_text(punit['movesleft']);
+  return i18next.t("Moves") + ":" + move_points_text(punit['movesleft']);
 }
 
 /**************************************************************************

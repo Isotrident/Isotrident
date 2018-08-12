@@ -164,11 +164,27 @@
 			</ul>
 			<ul class="nav nav-tabs hidden-lg hidden-md hidden-sm" role="tablist">
 				<li role="presentation" class="${view == 'singleplayer' or empty view ? 'active' : ''}"><a href="#single-player-tab"
-					aria-controls="single-player" role="tab" data-toggle="tab">Single (${singlePlayerGames})</a></li>
+					aria-controls="single-player" role="tab" data-toggle="tab">
+					 <c:if test = "${lang == 'en' || empty lang}">
+                         Single
+                     </c:if>
+                     <c:if test = "${lang == 'cn'}">
+                         &#x5355;&#x4EBA;&#x73A9;&#x5BB6;
+                     </c:if>
+					 (${singlePlayerGames})</a></li>
 				<li role="presentation" class="${view == 'multiplayer' ? 'active' : ''}"><a href="#multi-player-tab"
-					aria-controls="multi-player" role="tab" data-toggle="tab">Multi (${multiPlayerGames})</a></li>
-				<li role="presentation" class="${view == 'play-by-email' ? 'active' : ''}"><a href="#play-by-email-tab"
-					aria-controls="play-by-email" role="tab" data-toggle="tab">Play-By-Email</a></li>
+					aria-controls="multi-player" role="tab" data-toggle="tab">
+                        <c:if test = "${lang == 'en' || empty lang}">
+                            Multiplayer
+                        </c:if>
+                        <c:if test = "${lang == 'cn'}">
+                            &#x591A;&#x4EBA;
+                        </c:if>
+					(${multiPlayerGames})</a></li>
+				<c:if test = "${lang == 'en' || empty lang}">
+				    <li role="presentation" class="${view == 'play-by-email' ? 'active' : ''}"><a href="#play-by-email-tab"
+    					aria-controls="play-by-email" role="tab" data-toggle="tab">Play-By-Email</a></li>
+    			</c:if>
 			</ul>
 
 			<div class="tab-content">
@@ -250,7 +266,14 @@
 											<c:when test="${game.state != 'Running'}">
 												<a class="label label-success label-lg"
 													href="/webclient/?action=multi&amp;civserverport=${game.port}&amp;civserverhost=${game.host}&amp;multi=true">
-													Play</a>
+													    <c:if test = "${lang == 'en' || empty lang}">
+                                                            Play
+                                                        </c:if>
+                                                        <c:if test = "${lang == 'cn'}">
+                                                            &#x73A9;
+                                                        </c:if>
+
+													</a>
 											</c:when>
 											<c:otherwise>
                                                 <a class="label label-success label-lg"
@@ -265,7 +288,12 @@
 											</c:otherwise>
 										</c:choose>
 										<a class="label label-primary label-lg"	href="/game/details?host=${game.host}&amp;port=${game.port}">
-											Info
+											   <c:if test = "${lang == 'en' || empty lang}">
+                                                    Info
+                                                </c:if>
+                                                <c:if test = "${lang == 'cn'}">
+                                                    &#x4FE1;&#x606F;
+                                                </c:if>
 										</a>
 									</td>
 								</tr>

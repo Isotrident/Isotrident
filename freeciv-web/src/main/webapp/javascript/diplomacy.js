@@ -393,6 +393,12 @@ function create_diplomacy_dialog(counterpart, template) {
 
   diplomacy_dialog.css("overflow", "visible");
   diplomacy_dialog.parent().css("z-index", 1000);
+
+    if (lang == 'cn') {
+      $('button:contains("Accept treaty")').text(i18next.t("Accept treaty"));
+      $('button:contains("Cancel meeting")').text(i18next.t("Cancel meeting"));
+    }
+
 }
 
 function meeting_paint_custom_flag(nation, flag_canvas)

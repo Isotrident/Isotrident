@@ -3,42 +3,15 @@ $(document).ready(function () {
 	(function ($) {
 	
 		$(function () {
-			loadBlog();
-			loadBestOfPlayByEmail();
-			displayStore();
+			//loadBestOfPlayByEmail();
+			//displayStore();
 
 			if (!Detector.webgl) {
-	          $("#webgl_button").addClass("disabled");
-	          $("#webgl_button").html("WebGL not enabled!");
+	          $("#webgl_button").hide();
 			}
 		});
 	
-		function loadBlog() {
-			// TODO: rename /fpfeed.json to /feed
-			$.getJSON('/fpfeed.json', function(data) {
-				var MAX_ELEMENTS = 5;
-				var root = document.getElementById('latest-from-blog-articles');
-				data.forEach(function (article, i) {
-					if (i >= MAX_ELEMENTS) {
-						return;
-					}
-					var item = document.createElement('li');
-					var title = document.createElement('a');
-					var date = document.createElement('a');
-					 
-					title.href = article.permalink;
-					title.innerHTML = article.title;
-					date.href = article.permalink;
-					date.innerHTML = article.date;
-					 
-					item.appendChild(title);
-					item.appendChild(date);
-					root.appendChild(item);
-				});
-			}).fail(function () {
-				document.getElementById('latest-from-blog').style.display = 'none';
-			})
-		}
+
 	
 		function loadBestOfPlayByEmail() {
 		
@@ -69,15 +42,7 @@ $(document).ready(function () {
 			}).fail(clearContent);
 		}
 
-		function displayStore() {
-			var ua = navigator.userAgent.toLowerCase();
-			if (ua.indexOf('android') >= 0) {
-				$("#google-play-store").show();
-			} else if (ua.indexOf('chrome') >= 0) {
-				$("#chrome-web-store").show();
-			}
-		}
-	
+
 	
 	})($)
 });

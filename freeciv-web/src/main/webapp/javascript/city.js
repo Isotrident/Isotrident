@@ -273,7 +273,7 @@ function show_city_dialog(pcity)
            + "px;  width: " + sprite['width'] + "px;height: " + sprite['height'] + "px;float:left; '"
            + "title=\"" + improvements[z]['helptext'] + "\" "
 	   + "onclick='city_sell_improvement(" + z + ");'>"
-           +"</div>" + improvements[z]['name'] + "</div>";
+           +"</div>" + i18next.t(improvements[z]['name']) + "</div>";
     }
   }
   $("#city_improvements_list").html(improvements_html);
@@ -417,6 +417,17 @@ function show_city_dialog(pcity)
 
   if (is_small_screen()) {
    $(".ui-tabs-anchor").css("padding", "2px");
+  }
+
+
+  if (lang == 'cn') {
+    $('button:contains("Close")').text(i18next.t("Close"));
+    $('button:contains("Rename")').text(i18next.t("Rename City"));
+    $('button:contains("Buy (B)")').text(i18next.t("Buy"));
+    $('button:contains("Next city (N)")').text(i18next.t("Show next city"));
+    $('button:contains("Previous city")').text(i18next.t("Show previous city"));
+
+
   }
 
 }
@@ -1943,7 +1954,7 @@ function update_city_screen()
   city_list_html += "</tbody></table>";
   $("#cities_list").html(city_list_html);
 
-  if (count == 0) {
+  if (count == 0 && lang != 'cn') {
     $("#city_table").html("You have no cities. Build new cities with the Settlers unit.");
   }
 

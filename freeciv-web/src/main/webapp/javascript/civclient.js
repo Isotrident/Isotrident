@@ -353,6 +353,7 @@ function validate_username() {
   } else if (username != cleaned_username) {
     $("#username_validation_result").html("Your name contains invalid characters, only the English alphabet is allowed.");
     $("#username_validation_result").show();
+    throw new Error('Invalid username: ' + username);
     return false;
   } else if (!check_text_with_banlist_exact(username)) {
     $("#username_validation_result").html("Your account has been banned.");

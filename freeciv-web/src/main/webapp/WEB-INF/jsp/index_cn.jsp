@@ -35,7 +35,7 @@
 	/* Game launcher */          
 	#game-launcher {
 		width: 100%;
-		margin: 0 auto;
+		margin: 0px;
 		font-family: 'Open Sans', Helvetica;
 	}
 	#game-launcher .game-type {
@@ -82,7 +82,7 @@
 		border: 0;
 		border-radius: 5px;
 		padding: 10px;
-		width: 80%;
+		width: 95%;
 		display: block;
 		font-weight: 700;
 		font-size: 50px;
@@ -134,8 +134,8 @@
 			</div>
 			<div class="container-fluid">
 				<div class="row top-buffer-3">
-				    <h1>&#x6587;&#x660E;
-			            Wenming.io &#x6E38;&#x620F;
+				    <h1>&#x6587;&#x660E; Wenming.io <br>
+			            &#x6E38;&#x620F;
 			       </h1>
 			    </div>
 			</div>
@@ -147,16 +147,13 @@
 				<div class="col-md-12">
 					<div class="game-type">
 
-						<a id="single-button" href="/webclient/?action=new" class="btn"><i class="fa fa-flag"></i> &#x65B0;&#x6E38;&#x620F;  </a>
+						<a id="single-button" href="/webclient/?action=new" class="btn">&#x65B0;&#x6E38;&#x620F;  </a>
 
+						<a href="/webclient/?action=load&amp;scenario=true" class="btn">&#x60C5;&#x666F;&#x56FE;</a>
 
-						<a href="/webclient/?action=new&renderer=webgl" class="btn" id="webgl_button"><i class="fa fa-cube"></i> &#x65B0;&#x6E38;&#x620F;  &#x4E09;&#x7EF4;&#x7684;</a>
+						<a href="/webclient/?action=new&renderer=webgl" class="btn" id="webgl_button">&#x65B0;&#x6E38;&#x620F;  3D</a>
 
-
-						<a href="/webclient/?action=load&amp;scenario=true" class="btn"><i class="fa fa-map-o"></i> &#x811A;&#x672C;</a>
-
-
-						<a href="/game/list?v=multiplayer" class="btn"><i class="fa fa-users"></i> &#x591A;&#x4EBA;</a>
+						<a href="/game/list?v=multiplayer" class="btn">&#x591A;&#x4EBA;</a>
 
 					</div>
 				</div>
@@ -167,21 +164,21 @@
 		<div class="row">
 		    <br><br>
 			<div class="col-md-6">
-				<img src="/static/images/fp-2d.png" alt="" style="width: 100%;">
+				<a  href="/webclient/?action=new"><img src="/static/images/fp-2d-small.png" alt="" style="width: 100%;"></a><br><br>
 			</div>
 			<div class="col-md-6">
-				<img src="/static/images/fp-webgl.png" alt="" style="width: 100%;">
+				<a href="/webclient/?action=new&renderer=webgl" ><img src="/static/images/fp-webgl-small.png" alt="" style="width: 100%;"></a><br>
 			</div>
 		</div> 
 
 
 
-		<div class="row">
+		<!--<div class="row">
 			<div class="col-md-12">
 				<br><br>
-				<iframe src="https://discordapp.com/widget?id=477868896335167490&theme=dark" width="100%" height="500" allowtransparency="true" frameborder="0"></iframe>
+				<iframe src="https://discordapp.com/widget?id=477868896335167490&theme=dark" width="97%" height="250" allowtransparency="true" frameborder="0"></iframe>
 			</div>
-		</div> 
+		</div>-->
 
 
        <div class="row">

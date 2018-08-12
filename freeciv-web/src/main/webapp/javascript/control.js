@@ -900,7 +900,7 @@ function update_unit_order_commands()
     } else if (utype_can_do_action(ptype, ACTION_JOIN_CITY)
                && pcity != null) {
       $("#order_build_city").show();
-      unit_actions["build"] = {name: "Join city (B)"};
+      unit_actions["build"] = {name: i18next.t("Join City") + " (B)"};
     } else {
       $("#order_build_city").hide();
     }
@@ -926,15 +926,24 @@ function update_unit_order_commands()
     if (ptype['name'] == "Settlers" || ptype['name'] == "Workers"
         || ptype['name'] == "Engineers") {
 
-      if (ptype['name'] == "Settlers") unit_actions["autosettlers"] = {name: "Auto settler (A)"};
-      if (ptype['name'] == "Workers") unit_actions["autosettlers"] = {name: "Auto workers (A)"};
-      if (ptype['name'] == "Engineers") unit_actions["autosettlers"] = {name: "Auto engineers (A)"};
+
+      if (lang == 'cn') {
+        if (ptype['name'] == "Settlers") unit_actions["autosettlers"] = {name: i18next.t("_Auto Settler") + " (A)"};
+        if (ptype['name'] == "Workers") unit_actions["autosettlers"] = {name: i18next.t("Auto Worker") + " (A)"};
+        if (ptype['name'] == "Engineers") unit_actions["autosettlers"] = {name: i18next.t("Auto Worker") + " (A)"};
+      } else {
+        if (ptype['name'] == "Settlers") unit_actions["autosettlers"] = {name: "Auto Settler (A)"};
+        if (ptype['name'] == "Workers") unit_actions["autosettlers"] = {name: "Auto worker (A)"};
+        if (ptype['name'] == "Engineers") unit_actions["autosettlers"] = {name: "Auto engineers (A)"};
+
+      }
+
 
       if (!tile_has_extra(ptile, EXTRA_ROAD)) {
         $("#order_road").show();
         $("#order_railroad").hide();
         if (!(tile_has_extra(ptile, EXTRA_RIVER) && player_invention_state(client.conn.playing, tech_id_by_name('Bridge Building')) == TECH_UNKNOWN)) {
-	      unit_actions["road"] = {name: "Build road (R)"};
+	      unit_actions["road"] = {name: i18next.t("Build Road") + " (R)"};
 	    }
       } else if (player_invention_state(client.conn.playing, tech_id_by_name('Railroad')) == TECH_KNOWN
                  && tile_has_extra(ptile, EXTRA_ROAD)
@@ -957,7 +966,7 @@ function update_unit_order_commands()
       $("#order_pollution").show();
       if (tile_terrain(ptile)['name'] == 'Hills' || tile_terrain(ptile)['name'] == 'Mountains') {
         $("#order_mine").show();
-        unit_actions["mine"] =  {name: "Mine (M)"};
+        unit_actions["mine"] =  {name: i18next.t("Mine") + " (M)"};
       }
 
       if (tile_has_extra(ptile, EXTRA_FALLOUT)) {
@@ -980,9 +989,9 @@ function update_unit_order_commands()
         $("#order_irrigate").show();
         $("#order_forest_remove").hide();
         $("#order_build_farmland").hide();
-        unit_actions["irrigation"] = {name: "Irrigation (I)"};
+        unit_actions["irrigation"] = {name: i18next.t("Irrigation") + " (I)"};
         if (tile_terrain(ptile)['name'] != 'Hills' && tile_terrain(ptile)['name'] != 'Mountains') {
-          unit_actions["mine"] = {name: "Plant forest (M)"};
+          unit_actions["mine"] = {name: i18next.t("Plant Forest") + " (M)"};
         }
       } else if (!tile_has_extra(ptile, EXTRA_FARMLAND) && player_invention_state(client.conn.playing, tech_id_by_name('Refrigeration')) == TECH_KNOWN) {
         $("#order_build_farmland").show();
@@ -1013,11 +1022,11 @@ function update_unit_order_commands()
       $("#order_sentry").show();
       $("#order_explore").show();
       $("#order_pollution").hide();
-      unit_actions["fortify"] = {name: "Fortify (F)"};
+      unit_actions["fortify"] = {name: i18next.t("Fortify") + " (F)"};
     }
 
     /* Practically all unit types can currently perform some action. */
-    unit_actions["action_selection"] = {name: "Do... (D)"};
+    unit_actions["action_selection"] = {name: i18next.t("_Do...") + " (D)"};
 
     if (utype_can_do_action(ptype, ACTION_TRANSFORM_TERRAIN)) {
       $("#order_transform").show();
@@ -1042,7 +1051,7 @@ function update_unit_order_commands()
 
     if (!client_is_observer() && client.conn.playing != null && get_what_can_unit_pillage_from(punit, ptile).length > 0 && (pcity == null || pcity != null && city_owner_player_id(pcity) != client.conn.playing.playerno)) {
       $("#order_pillage").show();
-      unit_actions["pillage"] = {name: "Pillage (Shift-P)"};
+      unit_actions["pillage"] = {name: i18next.t("Pillage") + " (Shift-P)"};
     } else {
       $("#order_pillage").hide();
     }
@@ -1062,7 +1071,7 @@ function update_unit_order_commands()
       unit_actions["upgrade"] =  {name: "Upgrade unit (U)"};
     }
     if (ptype != null && ptype['name'] != "Explorer") {
-      unit_actions["explore"] = {name: "Auto explore (X)"};
+      unit_actions["explore"] = {name: i18next.t("Auto Explore") + " (X)"};
     }
 
     // Load unit on transport
@@ -1093,7 +1102,7 @@ function update_unit_order_commands()
     if (punit.activity != ACTIVITY_IDLE || punit.ai || punit.has_orders) {
       unit_actions["idle"] = {name: "Cancel orders (Shift-J)"};
     } else {
-      unit_actions["noorders"] = {name: "No orders (J)"};
+      unit_actions["noorders"] = {name: i18next.t("No Orders") + " (J)"};
     }
   }
 
@@ -2712,7 +2721,7 @@ function request_unit_build_city()
       if (punit['movesleft'] == 0) {
         message_log.update({
           event: E_BAD_COMMAND,
-          message: "Unit has no moves left to build city"
+          message: i18next.t("This unit has too few moves left to act.")
         });
         return;
       }
@@ -3079,7 +3088,7 @@ function update_active_units_dialog()
       unit_info_html += "<b>" + nations[players[current_focus[0]['owner']]['nation']]['adjective'] + "</b> ";
     }
 
-    unit_info_html += "<b>" + ptype['name'] + "</b>: ";
+    unit_info_html += "<b>" + i18next.t(ptype['name']) + "</b>: ";
     if (get_unit_homecity_name(aunit) != null) {
       unit_info_html += " " + get_unit_homecity_name(aunit) + " ";
     }
