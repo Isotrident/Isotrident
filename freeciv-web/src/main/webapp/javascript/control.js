@@ -3066,6 +3066,7 @@ function update_active_units_dialog()
   for (var i = 0; i < punits.length; i++) {
     var punit = punits[i];
     var sprite = get_unit_image_sprite(punit);
+    if (sprite == null) continue;
     var active = (current_focus.length > 1 || current_focus[0]['id'] == punit['id']);
 
     unit_info_html += "<div id='unit_info_div' class='" + (active ? "current_focus_unit" : "")

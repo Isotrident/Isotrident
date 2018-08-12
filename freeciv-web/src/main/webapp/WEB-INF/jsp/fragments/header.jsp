@@ -84,7 +84,7 @@
 			    <li><a href="http://www.wenming.io/">Chinese</a></li>
 			  </c:if>
             <c:if test = "${lang == 'cn'}">
-                 <li><a href="https://www.isotrident.com/">English</a></li>
+                 <li><a href="https://www.isotrident.com/" style="font-size: 50%;">English</a></li>
             </c:if>
 
 

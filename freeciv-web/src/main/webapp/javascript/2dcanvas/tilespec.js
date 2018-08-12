@@ -1146,6 +1146,7 @@ function get_unit_image_sprite(punit)
    * get_unit_image_sprite() started to use it. It was added in
    * f4a3ef358d1462d1f0ef7529982c417ddc402583 but that commit is to huge for
    * me to figure out what it does. */
+  if (from_type == null) return null;
   from_type["height"] = from_type["height"] - 2;
 
   return from_type;

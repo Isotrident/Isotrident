@@ -173,12 +173,12 @@
 
 
 
-		<!--<div class="row">
+		<div class="row">
 			<div class="col-md-12">
 				<br><br>
 				<iframe src="https://discordapp.com/widget?id=471270045855514624&theme=dark" width="100%" height="300" allowtransparency="true" frameborder="0"></iframe>
 			</div>
-		</div>-->
+		</div>
 
 
        <div class="row">
