@@ -11,7 +11,7 @@
 (function ($) {
 	
 	$(function () {
-	    if (window.location == 'localhost' || window.location == 'www.wenming.io') return;
+	    if (window.location.hostname == 'localhost' || window.location.hostname == 'www.wenming.io') return;
 		displayPlayByEmailGames();
 	});
 	
