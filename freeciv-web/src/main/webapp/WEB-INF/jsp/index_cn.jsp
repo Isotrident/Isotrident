@@ -149,7 +149,7 @@
 
 						<a id="single-button" href="/webclient/?action=new" class="btn">&#x65B0;&#x6E38;&#x620F;  </a>
 
-						<a href="/webclient/?action=load&amp;scenario=true" class="btn">&#x60C5;&#x666F;&#x56FE;</a>
+						<a href="/webclient/?action=load&amp;scenario=true" class="btn">&#x573A;&#x666F;&#x56FE;</a>
 
 						<a href="/webclient/?action=new&renderer=webgl" class="btn" id="webgl_button">&#x65B0;&#x6E38;&#x620F;  3D</a>
 
